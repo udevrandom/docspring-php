@@ -1,6 +1,6 @@
 <?php
 /**
- * SubmissionDataTest
+ * CreateTemplateData1Test
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * SubmissionDataTest Class Doc Comment
+ * CreateTemplateData1Test Class Doc Comment
  *
  * @category    Class
- * @description SubmissionData
+ * @description CreateTemplateData1
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class SubmissionDataTest extends \PHPUnit_Framework_TestCase
+class CreateTemplateData1Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,58 +70,16 @@ class SubmissionDataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SubmissionData"
+     * Test "CreateTemplateData1"
      */
-    public function testSubmissionData()
+    public function testCreateTemplateData1()
     {
     }
 
     /**
-     * Test attribute "test"
+     * Test attribute "template"
      */
-    public function testPropertyTest()
-    {
-    }
-
-    /**
-     * Test attribute "data"
-     */
-    public function testPropertyData()
-    {
-    }
-
-    /**
-     * Test attribute "html"
-     */
-    public function testPropertyHtml()
-    {
-    }
-
-    /**
-     * Test attribute "css"
-     */
-    public function testPropertyCss()
-    {
-    }
-
-    /**
-     * Test attribute "metadata"
-     */
-    public function testPropertyMetadata()
-    {
-    }
-
-    /**
-     * Test attribute "field_overrides"
-     */
-    public function testPropertyFieldOverrides()
-    {
-    }
-
-    /**
-     * Test attribute "data_requests"
-     */
-    public function testPropertyDataRequests()
+    public function testPropertyTemplate()
     {
     }
 }

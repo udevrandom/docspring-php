@@ -73,7 +73,9 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         'auth_session_id_hash' => 'string',
         'auth_user_id_hash' => 'string',
         'auth_username_hash' => 'string',
-        'auth_phone_number_hash' => 'string'
+        'auth_phone_number_hash' => 'string',
+        'ip_address' => 'string',
+        'user_agent' => 'string'
     ];
 
     /**
@@ -98,7 +100,9 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         'auth_session_id_hash' => null,
         'auth_user_id_hash' => null,
         'auth_username_hash' => null,
-        'auth_phone_number_hash' => null
+        'auth_phone_number_hash' => null,
+        'ip_address' => null,
+        'user_agent' => null
     ];
 
     /**
@@ -144,7 +148,9 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         'auth_session_id_hash' => 'auth_session_id_hash',
         'auth_user_id_hash' => 'auth_user_id_hash',
         'auth_username_hash' => 'auth_username_hash',
-        'auth_phone_number_hash' => 'auth_phone_number_hash'
+        'auth_phone_number_hash' => 'auth_phone_number_hash',
+        'ip_address' => 'ip_address',
+        'user_agent' => 'user_agent'
     ];
 
     /**
@@ -169,7 +175,9 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         'auth_session_id_hash' => 'setAuthSessionIdHash',
         'auth_user_id_hash' => 'setAuthUserIdHash',
         'auth_username_hash' => 'setAuthUsernameHash',
-        'auth_phone_number_hash' => 'setAuthPhoneNumberHash'
+        'auth_phone_number_hash' => 'setAuthPhoneNumberHash',
+        'ip_address' => 'setIpAddress',
+        'user_agent' => 'setUserAgent'
     ];
 
     /**
@@ -194,7 +202,9 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         'auth_session_id_hash' => 'getAuthSessionIdHash',
         'auth_user_id_hash' => 'getAuthUserIdHash',
         'auth_username_hash' => 'getAuthUsernameHash',
-        'auth_phone_number_hash' => 'getAuthPhoneNumberHash'
+        'auth_phone_number_hash' => 'getAuthPhoneNumberHash',
+        'ip_address' => 'getIpAddress',
+        'user_agent' => 'getUserAgent'
     ];
 
     /**
@@ -337,6 +347,8 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         $this->container['auth_user_id_hash'] = isset($data['auth_user_id_hash']) ? $data['auth_user_id_hash'] : null;
         $this->container['auth_username_hash'] = isset($data['auth_username_hash']) ? $data['auth_username_hash'] : null;
         $this->container['auth_phone_number_hash'] = isset($data['auth_phone_number_hash']) ? $data['auth_phone_number_hash'] : null;
+        $this->container['ip_address'] = isset($data['ip_address']) ? $data['ip_address'] : null;
+        $this->container['user_agent'] = isset($data['user_agent']) ? $data['user_agent'] : null;
     }
 
     /**
@@ -839,6 +851,54 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
     public function setAuthPhoneNumberHash($auth_phone_number_hash)
     {
         $this->container['auth_phone_number_hash'] = $auth_phone_number_hash;
+
+        return $this;
+    }
+
+    /**
+     * Gets ip_address
+     *
+     * @return string|null
+     */
+    public function getIpAddress()
+    {
+        return $this->container['ip_address'];
+    }
+
+    /**
+     * Sets ip_address
+     *
+     * @param string|null $ip_address ip_address
+     *
+     * @return $this
+     */
+    public function setIpAddress($ip_address)
+    {
+        $this->container['ip_address'] = $ip_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_agent
+     *
+     * @return string|null
+     */
+    public function getUserAgent()
+    {
+        return $this->container['user_agent'];
+    }
+
+    /**
+     * Sets user_agent
+     *
+     * @param string|null $user_agent user_agent
+     *
+     * @return $this
+     */
+    public function setUserAgent($user_agent)
+    {
+        $this->container['user_agent'] = $user_agent;
 
         return $this;
     }

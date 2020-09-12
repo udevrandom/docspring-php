@@ -61,6 +61,7 @@ class CombinedSubmission implements ModelInterface, ArrayAccess
         'expired' => 'bool',
         'expires_at' => 'string',
         'source_pdfs' => 'object[]',
+        'pdf_hash' => 'string',
         'download_url' => 'string',
         'submission_ids' => 'string[]',
         'id' => 'string',
@@ -78,6 +79,7 @@ class CombinedSubmission implements ModelInterface, ArrayAccess
         'expired' => null,
         'expires_at' => null,
         'source_pdfs' => null,
+        'pdf_hash' => null,
         'download_url' => null,
         'submission_ids' => null,
         'id' => null,
@@ -116,6 +118,7 @@ class CombinedSubmission implements ModelInterface, ArrayAccess
         'expired' => 'expired',
         'expires_at' => 'expires_at',
         'source_pdfs' => 'source_pdfs',
+        'pdf_hash' => 'pdf_hash',
         'download_url' => 'download_url',
         'submission_ids' => 'submission_ids',
         'id' => 'id',
@@ -133,6 +136,7 @@ class CombinedSubmission implements ModelInterface, ArrayAccess
         'expired' => 'setExpired',
         'expires_at' => 'setExpiresAt',
         'source_pdfs' => 'setSourcePdfs',
+        'pdf_hash' => 'setPdfHash',
         'download_url' => 'setDownloadUrl',
         'submission_ids' => 'setSubmissionIds',
         'id' => 'setId',
@@ -150,6 +154,7 @@ class CombinedSubmission implements ModelInterface, ArrayAccess
         'expired' => 'getExpired',
         'expires_at' => 'getExpiresAt',
         'source_pdfs' => 'getSourcePdfs',
+        'pdf_hash' => 'getPdfHash',
         'download_url' => 'getDownloadUrl',
         'submission_ids' => 'getSubmissionIds',
         'id' => 'getId',
@@ -238,6 +243,7 @@ class CombinedSubmission implements ModelInterface, ArrayAccess
         $this->container['expired'] = isset($data['expired']) ? $data['expired'] : null;
         $this->container['expires_at'] = isset($data['expires_at']) ? $data['expires_at'] : null;
         $this->container['source_pdfs'] = isset($data['source_pdfs']) ? $data['source_pdfs'] : null;
+        $this->container['pdf_hash'] = isset($data['pdf_hash']) ? $data['pdf_hash'] : null;
         $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
         $this->container['submission_ids'] = isset($data['submission_ids']) ? $data['submission_ids'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
@@ -369,6 +375,30 @@ class CombinedSubmission implements ModelInterface, ArrayAccess
     public function setSourcePdfs($source_pdfs)
     {
         $this->container['source_pdfs'] = $source_pdfs;
+
+        return $this;
+    }
+
+    /**
+     * Gets pdf_hash
+     *
+     * @return string|null
+     */
+    public function getPdfHash()
+    {
+        return $this->container['pdf_hash'];
+    }
+
+    /**
+     * Sets pdf_hash
+     *
+     * @param string|null $pdf_hash pdf_hash
+     *
+     * @return $this
+     */
+    public function setPdfHash($pdf_hash)
+    {
+        $this->container['pdf_hash'] = $pdf_hash;
 
         return $this;
     }

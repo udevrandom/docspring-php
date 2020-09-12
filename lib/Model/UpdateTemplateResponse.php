@@ -1,6 +1,6 @@
 <?php
 /**
- * Templatesv2TemplateDocumentMetadata
+ * UpdateTemplateResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * Templatesv2TemplateDocumentMetadata Class Doc Comment
+ * UpdateTemplateResponse Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
+class UpdateTemplateResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'templatesv2_template_document_metadata';
+    protected static $openAPIModelName = 'update_template_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'filename' => 'string',
-        'size' => 'int',
-        'mime_type' => 'string'
+        'errors' => 'string[]',
+        'status' => 'string'
     ];
 
     /**
@@ -68,9 +67,8 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'filename' => null,
-        'size' => null,
-        'mime_type' => null
+        'errors' => null,
+        'status' => null
     ];
 
     /**
@@ -100,9 +98,8 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'filename' => 'filename',
-        'size' => 'size',
-        'mime_type' => 'mime_type'
+        'errors' => 'errors',
+        'status' => 'status'
     ];
 
     /**
@@ -111,9 +108,8 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename',
-        'size' => 'setSize',
-        'mime_type' => 'setMimeType'
+        'errors' => 'setErrors',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -122,9 +118,8 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename',
-        'size' => 'getSize',
-        'mime_type' => 'getMimeType'
+        'errors' => 'getErrors',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -168,7 +163,8 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const MIME_TYPE_APPLICATIONPDF = 'application/pdf';
+    const STATUS_SUCCESS = 'success';
+    const STATUS_ERROR = 'error';
     
 
     
@@ -177,10 +173,11 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getMimeTypeAllowableValues()
+    public function getStatusAllowableValues()
     {
         return [
-            self::MIME_TYPE_APPLICATIONPDF,
+            self::STATUS_SUCCESS,
+            self::STATUS_ERROR,
         ];
     }
     
@@ -200,9 +197,8 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
-        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
-        $this->container['mime_type'] = isset($data['mime_type']) ? $data['mime_type'] : null;
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
     }
 
     /**
@@ -214,10 +210,10 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getMimeTypeAllowableValues();
-        if (!is_null($this->container['mime_type']) && !in_array($this->container['mime_type'], $allowedValues, true)) {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'mime_type', must be one of '%s'",
+                "invalid value for 'status', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -238,82 +234,58 @@ class Templatesv2TemplateDocumentMetadata implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets filename
+     * Gets errors
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getFilename()
+    public function getErrors()
     {
-        return $this->container['filename'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets filename
+     * Sets errors
      *
-     * @param string|null $filename filename
+     * @param string[]|null $errors errors
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setErrors($errors)
     {
-        $this->container['filename'] = $filename;
+        $this->container['errors'] = $errors;
 
         return $this;
     }
 
     /**
-     * Gets size
-     *
-     * @return int|null
-     */
-    public function getSize()
-    {
-        return $this->container['size'];
-    }
-
-    /**
-     * Sets size
-     *
-     * @param int|null $size size
-     *
-     * @return $this
-     */
-    public function setSize($size)
-    {
-        $this->container['size'] = $size;
-
-        return $this;
-    }
-
-    /**
-     * Gets mime_type
+     * Gets status
      *
      * @return string|null
      */
-    public function getMimeType()
+    public function getStatus()
     {
-        return $this->container['mime_type'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets mime_type
+     * Sets status
      *
-     * @param string|null $mime_type mime_type
+     * @param string|null $status status
      *
      * @return $this
      */
-    public function setMimeType($mime_type)
+    public function setStatus($status)
     {
-        $allowedValues = $this->getMimeTypeAllowableValues();
-        if (!is_null($mime_type) && !in_array($mime_type, $allowedValues, true)) {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'mime_type', must be one of '%s'",
+                    "Invalid value for 'status', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['mime_type'] = $mime_type;
+        $this->container['status'] = $status;
 
         return $this;
     }

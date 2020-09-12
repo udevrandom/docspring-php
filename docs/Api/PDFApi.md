@@ -11,8 +11,9 @@ Method | HTTP request | Description
 [**createCustomFileFromUpload**](PDFApi.md#createCustomFileFromUpload) | **POST** /custom_files | Create a new custom file from a cached presign upload
 [**createDataRequestToken**](PDFApi.md#createDataRequestToken) | **POST** /data_requests/{data_request_id}/tokens | Creates a new data request token for form authentication
 [**createFolder**](PDFApi.md#createFolder) | **POST** /folders/ | Create a folder
-[**createTemplate**](PDFApi.md#createTemplate) | **POST** /templates | Upload a new PDF template with a file upload
-[**createTemplateFromUpload**](PDFApi.md#createTemplateFromUpload) | **POST** /templates?v&#x3D;2 | Create a new PDF template from a cached presign upload
+[**createHTMLTemplate**](PDFApi.md#createHTMLTemplate) | **POST** /templates?desc&#x3D;html | Create a new HTML template
+[**createPDFTemplate**](PDFApi.md#createPDFTemplate) | **POST** /templates | Create a new PDF template with a form POST file upload
+[**createPDFTemplateFromUpload**](PDFApi.md#createPDFTemplateFromUpload) | **POST** /templates?desc&#x3D;cached_upload | Create a new PDF template from a cached presign upload
 [**deleteFolder**](PDFApi.md#deleteFolder) | **DELETE** /folders/{folder_id} | Delete a folder
 [**expireCombinedSubmission**](PDFApi.md#expireCombinedSubmission) | **DELETE** /combined_submissions/{combined_submission_id} | Expire a combined submission
 [**expireSubmission**](PDFApi.md#expireSubmission) | **DELETE** /submissions/{submission_id} | Expire a PDF submission
@@ -31,6 +32,7 @@ Method | HTTP request | Description
 [**renameFolder**](PDFApi.md#renameFolder) | **POST** /folders/{folder_id}/rename | Rename a folder
 [**testAuthentication**](PDFApi.md#testAuthentication) | **GET** /authentication | Test Authentication
 [**updateDataRequest**](PDFApi.md#updateDataRequest) | **PUT** /data_requests/{data_request_id} | Update a submission data request
+[**updateTemplate**](PDFApi.md#updateTemplate) | **PUT** /templates/{template_id} | Update a Template
 
 
 # **batchGeneratePdfV1**
@@ -413,10 +415,64 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **createTemplate**
-> \DocSpring\Model\PendingTemplate createTemplate($template_document, $template_name, $template_parent_folder_id)
+# **createHTMLTemplate**
+> \DocSpring\Model\PendingTemplate createHTMLTemplate($create_template_data1)
 
-Upload a new PDF template with a file upload
+Create a new HTML template
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: api_token_basic
+$config = DocSpring\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new DocSpring\Api\PDFApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$create_template_data1 = new \DocSpring\Model\CreateTemplateData1(); // \DocSpring\Model\CreateTemplateData1 | 
+
+try {
+    $result = $apiInstance->createHTMLTemplate($create_template_data1);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PDFApi->createHTMLTemplate: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_template_data1** | [**\DocSpring\Model\CreateTemplateData1**](../Model/CreateTemplateData1.md)|  |
+
+### Return type
+
+[**\DocSpring\Model\PendingTemplate**](../Model/PendingTemplate.md)
+
+### Authorization
+
+[api_token_basic](../../README.md#api_token_basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createPDFTemplate**
+> \DocSpring\Model\PendingTemplate createPDFTemplate($template_document, $template_name, $template_parent_folder_id)
+
+Create a new PDF template with a form POST file upload
 
 ### Example
 ```php
@@ -440,10 +496,10 @@ $template_name = 'template_name_example'; // string |
 $template_parent_folder_id = 'template_parent_folder_id_example'; // string | 
 
 try {
-    $result = $apiInstance->createTemplate($template_document, $template_name, $template_parent_folder_id);
+    $result = $apiInstance->createPDFTemplate($template_document, $template_name, $template_parent_folder_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PDFApi->createTemplate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PDFApi->createPDFTemplate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -471,8 +527,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **createTemplateFromUpload**
-> \DocSpring\Model\PendingTemplate createTemplateFromUpload($create_template_data)
+# **createPDFTemplateFromUpload**
+> \DocSpring\Model\PendingTemplate createPDFTemplateFromUpload($create_template_data)
 
 Create a new PDF template from a cached presign upload
 
@@ -496,10 +552,10 @@ $apiInstance = new DocSpring\Api\PDFApi(
 $create_template_data = new \DocSpring\Model\CreateTemplateData(); // \DocSpring\Model\CreateTemplateData | 
 
 try {
-    $result = $apiInstance->createTemplateFromUpload($create_template_data);
+    $result = $apiInstance->createPDFTemplateFromUpload($create_template_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PDFApi->createTemplateFromUpload: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PDFApi->createPDFTemplateFromUpload: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1496,6 +1552,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\DocSpring\Model\UpdateDataRequestResponse**](../Model/UpdateDataRequestResponse.md)
+
+### Authorization
+
+[api_token_basic](../../README.md#api_token_basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateTemplate**
+> \DocSpring\Model\UpdateTemplateResponse updateTemplate($template_id, $update_template_data)
+
+Update a Template
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: api_token_basic
+$config = DocSpring\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new DocSpring\Api\PDFApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$template_id = tpl_000000000000000003; // string | 
+$update_template_data = new \DocSpring\Model\UpdateTemplateData(); // \DocSpring\Model\UpdateTemplateData | 
+
+try {
+    $result = $apiInstance->updateTemplate($template_id, $update_template_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PDFApi->updateTemplate: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **template_id** | **string**|  |
+ **update_template_data** | [**\DocSpring\Model\UpdateTemplateData**](../Model/UpdateTemplateData.md)|  |
+
+### Return type
+
+[**\DocSpring\Model\UpdateTemplateResponse**](../Model/UpdateTemplateResponse.md)
 
 ### Authorization
 

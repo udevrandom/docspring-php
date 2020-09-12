@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **parent_folder_id** | **string** |  | [optional] 
 **expire_after** | **float** |  | [optional] 
 **allow_additional_properties** | **bool** |  | [optional] 
+**description** | **string** |  | [optional] 
 **public_submissions** | **bool** |  | [optional] 
 **slack_webhook_url** | **string** |  | [optional] 
 **path** | **string** |  | [optional] 

@@ -2463,40 +2463,36 @@ class PDFApi
     }
 
     /**
-     * Operation createTemplate
+     * Operation createHTMLTemplate
      *
-     * Upload a new PDF template with a file upload
+     * Create a new HTML template
      *
-     * @param  \SplFileObject $template_document template_document (required)
-     * @param  string $template_name template_name (required)
-     * @param  string $template_parent_folder_id template_parent_folder_id (optional)
+     * @param  \DocSpring\Model\CreateTemplateData1 $create_template_data1 create_template_data1 (required)
      *
      * @throws \DocSpring\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \DocSpring\Model\PendingTemplate|\DocSpring\Model\AuthenticationError
      */
-    public function createTemplate($template_document, $template_name, $template_parent_folder_id = null)
+    public function createHTMLTemplate($create_template_data1)
     {
-        list($response) = $this->createTemplateWithHttpInfo($template_document, $template_name, $template_parent_folder_id);
+        list($response) = $this->createHTMLTemplateWithHttpInfo($create_template_data1);
         return $response;
     }
 
     /**
-     * Operation createTemplateWithHttpInfo
+     * Operation createHTMLTemplateWithHttpInfo
      *
-     * Upload a new PDF template with a file upload
+     * Create a new HTML template
      *
-     * @param  \SplFileObject $template_document (required)
-     * @param  string $template_name (required)
-     * @param  string $template_parent_folder_id (optional)
+     * @param  \DocSpring\Model\CreateTemplateData1 $create_template_data1 (required)
      *
      * @throws \DocSpring\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \DocSpring\Model\PendingTemplate|\DocSpring\Model\AuthenticationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createTemplateWithHttpInfo($template_document, $template_name, $template_parent_folder_id = null)
+    public function createHTMLTemplateWithHttpInfo($create_template_data1)
     {
-        $request = $this->createTemplateRequest($template_document, $template_name, $template_parent_folder_id);
+        $request = $this->createHTMLTemplateRequest($create_template_data1);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2601,20 +2597,18 @@ class PDFApi
     }
 
     /**
-     * Operation createTemplateAsync
+     * Operation createHTMLTemplateAsync
      *
-     * Upload a new PDF template with a file upload
+     * Create a new HTML template
      *
-     * @param  \SplFileObject $template_document (required)
-     * @param  string $template_name (required)
-     * @param  string $template_parent_folder_id (optional)
+     * @param  \DocSpring\Model\CreateTemplateData1 $create_template_data1 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTemplateAsync($template_document, $template_name, $template_parent_folder_id = null)
+    public function createHTMLTemplateAsync($create_template_data1)
     {
-        return $this->createTemplateAsyncWithHttpInfo($template_document, $template_name, $template_parent_folder_id)
+        return $this->createHTMLTemplateAsyncWithHttpInfo($create_template_data1)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2623,21 +2617,19 @@ class PDFApi
     }
 
     /**
-     * Operation createTemplateAsyncWithHttpInfo
+     * Operation createHTMLTemplateAsyncWithHttpInfo
      *
-     * Upload a new PDF template with a file upload
+     * Create a new HTML template
      *
-     * @param  \SplFileObject $template_document (required)
-     * @param  string $template_name (required)
-     * @param  string $template_parent_folder_id (optional)
+     * @param  \DocSpring\Model\CreateTemplateData1 $create_template_data1 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTemplateAsyncWithHttpInfo($template_document, $template_name, $template_parent_folder_id = null)
+    public function createHTMLTemplateAsyncWithHttpInfo($create_template_data1)
     {
         $returnType = '\DocSpring\Model\PendingTemplate';
-        $request = $this->createTemplateRequest($template_document, $template_name, $template_parent_folder_id);
+        $request = $this->createHTMLTemplateRequest($create_template_data1);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2677,7 +2669,318 @@ class PDFApi
     }
 
     /**
-     * Create request for operation 'createTemplate'
+     * Create request for operation 'createHTMLTemplate'
+     *
+     * @param  \DocSpring\Model\CreateTemplateData1 $create_template_data1 (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function createHTMLTemplateRequest($create_template_data1)
+    {
+        // verify the required parameter 'create_template_data1' is set
+        if ($create_template_data1 === null || (is_array($create_template_data1) && count($create_template_data1) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_template_data1 when calling createHTMLTemplate'
+            );
+        }
+
+        $resourcePath = '/templates?desc=html';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($create_template_data1)) {
+            $_tempBody = $create_template_data1;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createPDFTemplate
+     *
+     * Create a new PDF template with a form POST file upload
+     *
+     * @param  \SplFileObject $template_document template_document (required)
+     * @param  string $template_name template_name (required)
+     * @param  string $template_parent_folder_id template_parent_folder_id (optional)
+     *
+     * @throws \DocSpring\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \DocSpring\Model\PendingTemplate|\DocSpring\Model\AuthenticationError
+     */
+    public function createPDFTemplate($template_document, $template_name, $template_parent_folder_id = null)
+    {
+        list($response) = $this->createPDFTemplateWithHttpInfo($template_document, $template_name, $template_parent_folder_id);
+        return $response;
+    }
+
+    /**
+     * Operation createPDFTemplateWithHttpInfo
+     *
+     * Create a new PDF template with a form POST file upload
+     *
+     * @param  \SplFileObject $template_document (required)
+     * @param  string $template_name (required)
+     * @param  string $template_parent_folder_id (optional)
+     *
+     * @throws \DocSpring\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \DocSpring\Model\PendingTemplate|\DocSpring\Model\AuthenticationError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createPDFTemplateWithHttpInfo($template_document, $template_name, $template_parent_folder_id = null)
+    {
+        $request = $this->createPDFTemplateRequest($template_document, $template_name, $template_parent_folder_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 201:
+                    if ('\DocSpring\Model\PendingTemplate' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ('\DocSpring\Model\PendingTemplate' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\DocSpring\Model\PendingTemplate', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\DocSpring\Model\AuthenticationError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ('\DocSpring\Model\AuthenticationError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\DocSpring\Model\AuthenticationError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\DocSpring\Model\PendingTemplate';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\DocSpring\Model\PendingTemplate',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\DocSpring\Model\AuthenticationError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createPDFTemplateAsync
+     *
+     * Create a new PDF template with a form POST file upload
+     *
+     * @param  \SplFileObject $template_document (required)
+     * @param  string $template_name (required)
+     * @param  string $template_parent_folder_id (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createPDFTemplateAsync($template_document, $template_name, $template_parent_folder_id = null)
+    {
+        return $this->createPDFTemplateAsyncWithHttpInfo($template_document, $template_name, $template_parent_folder_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createPDFTemplateAsyncWithHttpInfo
+     *
+     * Create a new PDF template with a form POST file upload
+     *
+     * @param  \SplFileObject $template_document (required)
+     * @param  string $template_name (required)
+     * @param  string $template_parent_folder_id (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createPDFTemplateAsyncWithHttpInfo($template_document, $template_name, $template_parent_folder_id = null)
+    {
+        $returnType = '\DocSpring\Model\PendingTemplate';
+        $request = $this->createPDFTemplateRequest($template_document, $template_name, $template_parent_folder_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createPDFTemplate'
      *
      * @param  \SplFileObject $template_document (required)
      * @param  string $template_name (required)
@@ -2686,18 +2989,18 @@ class PDFApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createTemplateRequest($template_document, $template_name, $template_parent_folder_id = null)
+    protected function createPDFTemplateRequest($template_document, $template_name, $template_parent_folder_id = null)
     {
         // verify the required parameter 'template_document' is set
         if ($template_document === null || (is_array($template_document) && count($template_document) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $template_document when calling createTemplate'
+                'Missing the required parameter $template_document when calling createPDFTemplate'
             );
         }
         // verify the required parameter 'template_name' is set
         if ($template_name === null || (is_array($template_name) && count($template_name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $template_name when calling createTemplate'
+                'Missing the required parameter $template_name when calling createPDFTemplate'
             );
         }
 
@@ -2792,7 +3095,7 @@ class PDFApi
     }
 
     /**
-     * Operation createTemplateFromUpload
+     * Operation createPDFTemplateFromUpload
      *
      * Create a new PDF template from a cached presign upload
      *
@@ -2802,14 +3105,14 @@ class PDFApi
      * @throws \InvalidArgumentException
      * @return \DocSpring\Model\PendingTemplate|\DocSpring\Model\AuthenticationError
      */
-    public function createTemplateFromUpload($create_template_data)
+    public function createPDFTemplateFromUpload($create_template_data)
     {
-        list($response) = $this->createTemplateFromUploadWithHttpInfo($create_template_data);
+        list($response) = $this->createPDFTemplateFromUploadWithHttpInfo($create_template_data);
         return $response;
     }
 
     /**
-     * Operation createTemplateFromUploadWithHttpInfo
+     * Operation createPDFTemplateFromUploadWithHttpInfo
      *
      * Create a new PDF template from a cached presign upload
      *
@@ -2819,9 +3122,9 @@ class PDFApi
      * @throws \InvalidArgumentException
      * @return array of \DocSpring\Model\PendingTemplate|\DocSpring\Model\AuthenticationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createTemplateFromUploadWithHttpInfo($create_template_data)
+    public function createPDFTemplateFromUploadWithHttpInfo($create_template_data)
     {
-        $request = $this->createTemplateFromUploadRequest($create_template_data);
+        $request = $this->createPDFTemplateFromUploadRequest($create_template_data);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2926,7 +3229,7 @@ class PDFApi
     }
 
     /**
-     * Operation createTemplateFromUploadAsync
+     * Operation createPDFTemplateFromUploadAsync
      *
      * Create a new PDF template from a cached presign upload
      *
@@ -2935,9 +3238,9 @@ class PDFApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTemplateFromUploadAsync($create_template_data)
+    public function createPDFTemplateFromUploadAsync($create_template_data)
     {
-        return $this->createTemplateFromUploadAsyncWithHttpInfo($create_template_data)
+        return $this->createPDFTemplateFromUploadAsyncWithHttpInfo($create_template_data)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2946,7 +3249,7 @@ class PDFApi
     }
 
     /**
-     * Operation createTemplateFromUploadAsyncWithHttpInfo
+     * Operation createPDFTemplateFromUploadAsyncWithHttpInfo
      *
      * Create a new PDF template from a cached presign upload
      *
@@ -2955,10 +3258,10 @@ class PDFApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTemplateFromUploadAsyncWithHttpInfo($create_template_data)
+    public function createPDFTemplateFromUploadAsyncWithHttpInfo($create_template_data)
     {
         $returnType = '\DocSpring\Model\PendingTemplate';
-        $request = $this->createTemplateFromUploadRequest($create_template_data);
+        $request = $this->createPDFTemplateFromUploadRequest($create_template_data);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2998,23 +3301,23 @@ class PDFApi
     }
 
     /**
-     * Create request for operation 'createTemplateFromUpload'
+     * Create request for operation 'createPDFTemplateFromUpload'
      *
      * @param  \DocSpring\Model\CreateTemplateData $create_template_data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createTemplateFromUploadRequest($create_template_data)
+    protected function createPDFTemplateFromUploadRequest($create_template_data)
     {
         // verify the required parameter 'create_template_data' is set
         if ($create_template_data === null || (is_array($create_template_data) && count($create_template_data) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $create_template_data when calling createTemplateFromUpload'
+                'Missing the required parameter $create_template_data when calling createPDFTemplateFromUpload'
             );
         }
 
-        $resourcePath = '/templates?v=2';
+        $resourcePath = '/templates?desc=cached_upload';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -8981,6 +9284,305 @@ class PDFApi
         $_tempBody = null;
         if (isset($update_submission_data_request_data)) {
             $_tempBody = $update_submission_data_request_data;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateTemplate
+     *
+     * Update a Template
+     *
+     * @param  string $template_id template_id (required)
+     * @param  \DocSpring\Model\UpdateTemplateData $update_template_data update_template_data (required)
+     *
+     * @throws \DocSpring\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \DocSpring\Model\UpdateTemplateResponse
+     */
+    public function updateTemplate($template_id, $update_template_data)
+    {
+        list($response) = $this->updateTemplateWithHttpInfo($template_id, $update_template_data);
+        return $response;
+    }
+
+    /**
+     * Operation updateTemplateWithHttpInfo
+     *
+     * Update a Template
+     *
+     * @param  string $template_id (required)
+     * @param  \DocSpring\Model\UpdateTemplateData $update_template_data (required)
+     *
+     * @throws \DocSpring\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \DocSpring\Model\UpdateTemplateResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateTemplateWithHttpInfo($template_id, $update_template_data)
+    {
+        $request = $this->updateTemplateRequest($template_id, $update_template_data);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\DocSpring\Model\UpdateTemplateResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ('\DocSpring\Model\UpdateTemplateResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\DocSpring\Model\UpdateTemplateResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\DocSpring\Model\UpdateTemplateResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\DocSpring\Model\UpdateTemplateResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateTemplateAsync
+     *
+     * Update a Template
+     *
+     * @param  string $template_id (required)
+     * @param  \DocSpring\Model\UpdateTemplateData $update_template_data (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateTemplateAsync($template_id, $update_template_data)
+    {
+        return $this->updateTemplateAsyncWithHttpInfo($template_id, $update_template_data)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateTemplateAsyncWithHttpInfo
+     *
+     * Update a Template
+     *
+     * @param  string $template_id (required)
+     * @param  \DocSpring\Model\UpdateTemplateData $update_template_data (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateTemplateAsyncWithHttpInfo($template_id, $update_template_data)
+    {
+        $returnType = '\DocSpring\Model\UpdateTemplateResponse';
+        $request = $this->updateTemplateRequest($template_id, $update_template_data);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateTemplate'
+     *
+     * @param  string $template_id (required)
+     * @param  \DocSpring\Model\UpdateTemplateData $update_template_data (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function updateTemplateRequest($template_id, $update_template_data)
+    {
+        // verify the required parameter 'template_id' is set
+        if ($template_id === null || (is_array($template_id) && count($template_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $template_id when calling updateTemplate'
+            );
+        }
+        // verify the required parameter 'update_template_data' is set
+        if ($update_template_data === null || (is_array($update_template_data) && count($update_template_data) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_template_data when calling updateTemplate'
+            );
+        }
+
+        $resourcePath = '/templates/{template_id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($template_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'template_id' . '}',
+                ObjectSerializer::toPathValue($template_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($update_template_data)) {
+            $_tempBody = $update_template_data;
         }
 
         if ($multipart) {

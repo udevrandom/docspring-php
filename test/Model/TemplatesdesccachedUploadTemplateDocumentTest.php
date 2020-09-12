@@ -1,6 +1,6 @@
 <?php
 /**
- * CombinedSubmissionTest
+ * TemplatesdesccachedUploadTemplateDocumentTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * CombinedSubmissionTest Class Doc Comment
+ * TemplatesdesccachedUploadTemplateDocumentTest Class Doc Comment
  *
  * @category    Class
- * @description CombinedSubmission
+ * @description TemplatesdesccachedUploadTemplateDocument
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CombinedSubmissionTest extends \PHPUnit_Framework_TestCase
+class TemplatesdesccachedUploadTemplateDocumentTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class CombinedSubmissionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CombinedSubmission"
+     * Test "TemplatesdesccachedUploadTemplateDocument"
      */
-    public function testCombinedSubmission()
+    public function testTemplatesdesccachedUploadTemplateDocument()
     {
     }
 
@@ -84,48 +84,6 @@ class CombinedSubmissionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "expired"
-     */
-    public function testPropertyExpired()
-    {
-    }
-
-    /**
-     * Test attribute "expires_at"
-     */
-    public function testPropertyExpiresAt()
-    {
-    }
-
-    /**
-     * Test attribute "source_pdfs"
-     */
-    public function testPropertySourcePdfs()
-    {
-    }
-
-    /**
-     * Test attribute "pdf_hash"
-     */
-    public function testPropertyPdfHash()
-    {
-    }
-
-    /**
-     * Test attribute "download_url"
-     */
-    public function testPropertyDownloadUrl()
-    {
-    }
-
-    /**
-     * Test attribute "submission_ids"
-     */
-    public function testPropertySubmissionIds()
-    {
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -133,16 +91,9 @@ class CombinedSubmissionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "storage"
      */
-    public function testPropertyState()
-    {
-    }
-
-    /**
-     * Test attribute "actions"
-     */
-    public function testPropertyActions()
+    public function testPropertyStorage()
     {
     }
 }

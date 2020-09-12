@@ -169,29 +169,41 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createTemplate
+     * Test case for createHTMLTemplate
      *
-     * Upload a new PDF template with a file upload.
+     * Create a new HTML template.
      *
      */
-    public function testCreateTemplate()
+    public function testCreateHTMLTemplate()
+    {
+      $create_template_data1 = new \DocSpring\Model\CreateTemplateData1(); // \DocSpring\Model\CreateTemplateData1 | 
+      $result = $apiInstance->createHTMLTemplate($create_template_data1);
+    }
+
+    /**
+     * Test case for createPDFTemplate
+     *
+     * Create a new PDF template with a form POST file upload.
+     *
+     */
+    public function testCreatePDFTemplate()
     {
       $template_document = "/path/to/file.txt"; // \SplFileObject | 
       $template_name = 'template_name_example'; // string | 
       $template_parent_folder_id = 'template_parent_folder_id_example'; // string | 
-      $result = $apiInstance->createTemplate($template_document, $template_name, $template_parent_folder_id);
+      $result = $apiInstance->createPDFTemplate($template_document, $template_name, $template_parent_folder_id);
     }
 
     /**
-     * Test case for createTemplateFromUpload
+     * Test case for createPDFTemplateFromUpload
      *
      * Create a new PDF template from a cached presign upload.
      *
      */
-    public function testCreateTemplateFromUpload()
+    public function testCreatePDFTemplateFromUpload()
     {
       $create_template_data = new \DocSpring\Model\CreateTemplateData(); // \DocSpring\Model\CreateTemplateData | 
-      $result = $apiInstance->createTemplateFromUpload($create_template_data);
+      $result = $apiInstance->createPDFTemplateFromUpload($create_template_data);
     }
 
     /**
@@ -415,5 +427,18 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
       $data_request_id = drq_000000000000000001; // string | 
       $update_submission_data_request_data = new \DocSpring\Model\UpdateSubmissionDataRequestData(); // \DocSpring\Model\UpdateSubmissionDataRequestData | 
       $result = $apiInstance->updateDataRequest($data_request_id, $update_submission_data_request_data);
+    }
+
+    /**
+     * Test case for updateTemplate
+     *
+     * Update a Template.
+     *
+     */
+    public function testUpdateTemplate()
+    {
+      $template_id = tpl_000000000000000003; // string | 
+      $update_template_data = new \DocSpring\Model\UpdateTemplateData(); // \DocSpring\Model\UpdateTemplateData | 
+      $result = $apiInstance->updateTemplate($template_id, $update_template_data);
     }
 }

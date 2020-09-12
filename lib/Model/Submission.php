@@ -66,6 +66,7 @@ class Submission implements ModelInterface, ArrayAccess
         'processed_at' => 'string',
         'state' => 'string',
         'metadata' => 'object',
+        'pdf_hash' => 'string',
         'download_url' => 'string',
         'permanent_download_url' => 'string',
         'batch_id' => 'string',
@@ -88,6 +89,7 @@ class Submission implements ModelInterface, ArrayAccess
         'processed_at' => null,
         'state' => null,
         'metadata' => null,
+        'pdf_hash' => null,
         'download_url' => null,
         'permanent_download_url' => null,
         'batch_id' => null,
@@ -131,6 +133,7 @@ class Submission implements ModelInterface, ArrayAccess
         'processed_at' => 'processed_at',
         'state' => 'state',
         'metadata' => 'metadata',
+        'pdf_hash' => 'pdf_hash',
         'download_url' => 'download_url',
         'permanent_download_url' => 'permanent_download_url',
         'batch_id' => 'batch_id',
@@ -153,6 +156,7 @@ class Submission implements ModelInterface, ArrayAccess
         'processed_at' => 'setProcessedAt',
         'state' => 'setState',
         'metadata' => 'setMetadata',
+        'pdf_hash' => 'setPdfHash',
         'download_url' => 'setDownloadUrl',
         'permanent_download_url' => 'setPermanentDownloadUrl',
         'batch_id' => 'setBatchId',
@@ -175,6 +179,7 @@ class Submission implements ModelInterface, ArrayAccess
         'processed_at' => 'getProcessedAt',
         'state' => 'getState',
         'metadata' => 'getMetadata',
+        'pdf_hash' => 'getPdfHash',
         'download_url' => 'getDownloadUrl',
         'permanent_download_url' => 'getPermanentDownloadUrl',
         'batch_id' => 'getBatchId',
@@ -233,6 +238,7 @@ class Submission implements ModelInterface, ArrayAccess
     const STATE_SYNTAX_ERROR = 'syntax_error';
     const STATE_ACCOUNT_SUSPENDED = 'account_suspended';
     const STATE_LICENSE_REVOKED = 'license_revoked';
+    const STATE_ACCIDENTAL = 'accidental';
     
 
     
@@ -254,6 +260,7 @@ class Submission implements ModelInterface, ArrayAccess
             self::STATE_SYNTAX_ERROR,
             self::STATE_ACCOUNT_SUSPENDED,
             self::STATE_LICENSE_REVOKED,
+            self::STATE_ACCIDENTAL,
         ];
     }
     
@@ -282,6 +289,7 @@ class Submission implements ModelInterface, ArrayAccess
         $this->container['processed_at'] = isset($data['processed_at']) ? $data['processed_at'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
+        $this->container['pdf_hash'] = isset($data['pdf_hash']) ? $data['pdf_hash'] : null;
         $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
         $this->container['permanent_download_url'] = isset($data['permanent_download_url']) ? $data['permanent_download_url'] : null;
         $this->container['batch_id'] = isset($data['batch_id']) ? $data['batch_id'] : null;
@@ -554,6 +562,30 @@ class Submission implements ModelInterface, ArrayAccess
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets pdf_hash
+     *
+     * @return string|null
+     */
+    public function getPdfHash()
+    {
+        return $this->container['pdf_hash'];
+    }
+
+    /**
+     * Sets pdf_hash
+     *
+     * @param string|null $pdf_hash pdf_hash
+     *
+     * @return $this
+     */
+    public function setPdfHash($pdf_hash)
+    {
+        $this->container['pdf_hash'] = $pdf_hash;
 
         return $this;
     }

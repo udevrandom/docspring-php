@@ -98,6 +98,11 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
         "description" => 'This is a test PDF!',
       ]);
       $submission_data->setTest(false);
+      $submission_data->setFieldOverrides([
+        "title" => [
+          "required" => false
+        ]
+      ]);
       $response = $docspring->generatePDF($template_id, $submission_data);
       $submission = $response->getSubmission();
 
@@ -307,6 +312,30 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
       $submission_id = 'sub_000000000000000001'; // string |
       $result = $this->docspring->getSubmission($submission_id);
       $this->assertStringStartsWith('sub_', $result->getId());
+    }
+
+    /**
+     * Test case for createHTMLTemplate
+     *
+     * Create a new HTML template.
+     *
+     */
+    public function testCreateHTMLTemplate()
+    {
+      $docspring = $this->docspring;
+      $create_template_data = new \DocSpring\Model\CreateTemplateData1([
+        "template" => [
+          "template_type" => "html",
+          "name" => "Test HTML Template",
+          "html" => "Test HTML",
+          "scss" => "Test SCSS",
+          "header_html" => "Test Header HTML",
+          "footer_html" => "Test Header HTML",
+        ]
+      ]); // \DocSpring\Model\CreateTemplateData1 |
+      $response = $this->docspring->createHTMLTemplate($create_template_data);
+      $this->assertStringStartsWith('tpl_', $response->getId());
+      $this->assertEquals('Test HTML Template', $response->getName());
     }
 
     /**

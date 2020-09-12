@@ -1,6 +1,6 @@
 <?php
 /**
- * SubmissionData
+ * CreateTemplateData1
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * SubmissionData Class Doc Comment
+ * CreateTemplateData1 Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class SubmissionData implements ModelInterface, ArrayAccess
+class CreateTemplateData1 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SubmissionData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'submission_data';
+    protected static $openAPIModelName = 'create_template_data_1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,7 @@ class SubmissionData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'test' => 'bool',
-        'data' => 'object',
-        'html' => 'string',
-        'css' => 'string',
-        'metadata' => 'object',
-        'field_overrides' => 'object',
-        'data_requests' => '\DocSpring\Model\CreateSubmissionDataRequestData[]'
+        'template' => '\DocSpring\Model\TemplatesdesccachedUploadTemplate'
     ];
 
     /**
@@ -72,13 +66,7 @@ class SubmissionData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'test' => null,
-        'data' => null,
-        'html' => null,
-        'css' => null,
-        'metadata' => null,
-        'field_overrides' => null,
-        'data_requests' => null
+        'template' => null
     ];
 
     /**
@@ -108,13 +96,7 @@ class SubmissionData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'test' => 'test',
-        'data' => 'data',
-        'html' => 'html',
-        'css' => 'css',
-        'metadata' => 'metadata',
-        'field_overrides' => 'field_overrides',
-        'data_requests' => 'data_requests'
+        'template' => 'template'
     ];
 
     /**
@@ -123,13 +105,7 @@ class SubmissionData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'test' => 'setTest',
-        'data' => 'setData',
-        'html' => 'setHtml',
-        'css' => 'setCss',
-        'metadata' => 'setMetadata',
-        'field_overrides' => 'setFieldOverrides',
-        'data_requests' => 'setDataRequests'
+        'template' => 'setTemplate'
     ];
 
     /**
@@ -138,13 +114,7 @@ class SubmissionData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'test' => 'getTest',
-        'data' => 'getData',
-        'html' => 'getHtml',
-        'css' => 'getCss',
-        'metadata' => 'getMetadata',
-        'field_overrides' => 'getFieldOverrides',
-        'data_requests' => 'getDataRequests'
+        'template' => 'getTemplate'
     ];
 
     /**
@@ -207,13 +177,7 @@ class SubmissionData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['test'] = isset($data['test']) ? $data['test'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
-        $this->container['html'] = isset($data['html']) ? $data['html'] : null;
-        $this->container['css'] = isset($data['css']) ? $data['css'] : null;
-        $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
-        $this->container['field_overrides'] = isset($data['field_overrides']) ? $data['field_overrides'] : null;
-        $this->container['data_requests'] = isset($data['data_requests']) ? $data['data_requests'] : null;
+        $this->container['template'] = isset($data['template']) ? $data['template'] : null;
     }
 
     /**
@@ -225,8 +189,8 @@ class SubmissionData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
+        if ($this->container['template'] === null) {
+            $invalidProperties[] = "'template' can't be null";
         }
         return $invalidProperties;
     }
@@ -244,169 +208,25 @@ class SubmissionData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets test
+     * Gets template
      *
-     * @return bool|null
+     * @return \DocSpring\Model\TemplatesdesccachedUploadTemplate
      */
-    public function getTest()
+    public function getTemplate()
     {
-        return $this->container['test'];
+        return $this->container['template'];
     }
 
     /**
-     * Sets test
+     * Sets template
      *
-     * @param bool|null $test test
+     * @param \DocSpring\Model\TemplatesdesccachedUploadTemplate $template template
      *
      * @return $this
      */
-    public function setTest($test)
+    public function setTemplate($template)
     {
-        $this->container['test'] = $test;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return object
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param object $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets html
-     *
-     * @return string|null
-     */
-    public function getHtml()
-    {
-        return $this->container['html'];
-    }
-
-    /**
-     * Sets html
-     *
-     * @param string|null $html html
-     *
-     * @return $this
-     */
-    public function setHtml($html)
-    {
-        $this->container['html'] = $html;
-
-        return $this;
-    }
-
-    /**
-     * Gets css
-     *
-     * @return string|null
-     */
-    public function getCss()
-    {
-        return $this->container['css'];
-    }
-
-    /**
-     * Sets css
-     *
-     * @param string|null $css css
-     *
-     * @return $this
-     */
-    public function setCss($css)
-    {
-        $this->container['css'] = $css;
-
-        return $this;
-    }
-
-    /**
-     * Gets metadata
-     *
-     * @return object|null
-     */
-    public function getMetadata()
-    {
-        return $this->container['metadata'];
-    }
-
-    /**
-     * Sets metadata
-     *
-     * @param object|null $metadata metadata
-     *
-     * @return $this
-     */
-    public function setMetadata($metadata)
-    {
-        $this->container['metadata'] = $metadata;
-
-        return $this;
-    }
-
-    /**
-     * Gets field_overrides
-     *
-     * @return object|null
-     */
-    public function getFieldOverrides()
-    {
-        return $this->container['field_overrides'];
-    }
-
-    /**
-     * Sets field_overrides
-     *
-     * @param object|null $field_overrides field_overrides
-     *
-     * @return $this
-     */
-    public function setFieldOverrides($field_overrides)
-    {
-        $this->container['field_overrides'] = $field_overrides;
-
-        return $this;
-    }
-
-    /**
-     * Gets data_requests
-     *
-     * @return \DocSpring\Model\CreateSubmissionDataRequestData[]|null
-     */
-    public function getDataRequests()
-    {
-        return $this->container['data_requests'];
-    }
-
-    /**
-     * Sets data_requests
-     *
-     * @param \DocSpring\Model\CreateSubmissionDataRequestData[]|null $data_requests data_requests
-     *
-     * @return $this
-     */
-    public function setDataRequests($data_requests)
-    {
-        $this->container['data_requests'] = $data_requests;
+        $this->container['template'] = $template;
 
         return $this;
     }

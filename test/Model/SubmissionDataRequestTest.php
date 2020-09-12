@@ -194,4 +194,18 @@ class SubmissionDataRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyAuthPhoneNumberHash()
     {
     }
+
+    /**
+     * Test attribute "ip_address"
+     */
+    public function testPropertyIpAddress()
+    {
+    }
+
+    /**
+     * Test attribute "user_agent"
+     */
+    public function testPropertyUserAgent()
+    {
+    }
 }

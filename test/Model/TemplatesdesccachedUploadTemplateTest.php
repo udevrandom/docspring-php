@@ -1,6 +1,6 @@
 <?php
 /**
- * Templatesv2TemplateTest
+ * TemplatesdesccachedUploadTemplateTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * Templatesv2TemplateTest Class Doc Comment
+ * TemplatesdesccachedUploadTemplateTest Class Doc Comment
  *
  * @category    Class
- * @description Templatesv2Template
+ * @description TemplatesdesccachedUploadTemplate
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class Templatesv2TemplateTest extends \PHPUnit_Framework_TestCase
+class TemplatesdesccachedUploadTemplateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class Templatesv2TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Templatesv2Template"
+     * Test "TemplatesdesccachedUploadTemplate"
      */
-    public function testTemplatesv2Template()
+    public function testTemplatesdesccachedUploadTemplate()
     {
     }
 
@@ -84,13 +84,6 @@ class Templatesv2TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "public_web_form"
-     */
-    public function testPropertyPublicWebForm()
-    {
-    }
-
-    /**
      * Test attribute "webhook_url"
      */
     public function testPropertyWebhookUrl()
@@ -98,16 +91,9 @@ class Templatesv2TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "editable_submissions"
+     * Test attribute "scss"
      */
-    public function testPropertyEditableSubmissions()
-    {
-    }
-
-    /**
-     * Test attribute "expire_submissions"
-     */
-    public function testPropertyExpireSubmissions()
+    public function testPropertyScss()
     {
     }
 
@@ -133,9 +119,9 @@ class Templatesv2TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "description"
      */
-    public function testPropertyName()
+    public function testPropertyDescription()
     {
     }
 
@@ -150,6 +136,62 @@ class Templatesv2TemplateTest extends \PHPUnit_Framework_TestCase
      * Test attribute "slack_webhook_url"
      */
     public function testPropertySlackWebhookUrl()
+    {
+    }
+
+    /**
+     * Test attribute "header_html"
+     */
+    public function testPropertyHeaderHtml()
+    {
+    }
+
+    /**
+     * Test attribute "public_web_form"
+     */
+    public function testPropertyPublicWebForm()
+    {
+    }
+
+    /**
+     * Test attribute "editable_submissions"
+     */
+    public function testPropertyEditableSubmissions()
+    {
+    }
+
+    /**
+     * Test attribute "expire_submissions"
+     */
+    public function testPropertyExpireSubmissions()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "html"
+     */
+    public function testPropertyHtml()
+    {
+    }
+
+    /**
+     * Test attribute "footer_html"
+     */
+    public function testPropertyFooterHtml()
+    {
+    }
+
+    /**
+     * Test attribute "template_type"
+     */
+    public function testPropertyTemplateType()
     {
     }
 

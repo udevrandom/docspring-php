@@ -1,6 +1,6 @@
 <?php
 /**
- * Templatesv2Template
+ * TemplatestemplateIdTemplate
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * Templatesv2Template Class Doc Comment
+ * TemplatestemplateIdTemplate Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Templatesv2Template implements ModelInterface, ArrayAccess
+class TemplatestemplateIdTemplate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'templatesv2_template';
+    protected static $openAPIModelName = 'templatestemplate_id_template';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,16 +58,20 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'expiration_interval' => 'string',
-        'public_web_form' => 'bool',
         'webhook_url' => 'string',
-        'editable_submissions' => 'bool',
-        'expire_submissions' => 'bool',
+        'scss' => 'string',
         'expire_after' => 'float',
         'allow_additional_properties' => 'bool',
-        'document' => '\DocSpring\Model\Templatesv2TemplateDocument',
-        'name' => 'string',
+        'description' => 'string',
         'public_submissions' => 'bool',
         'slack_webhook_url' => 'string',
+        'header_html' => 'string',
+        'public_web_form' => 'bool',
+        'editable_submissions' => 'bool',
+        'expire_submissions' => 'bool',
+        'name' => 'string',
+        'html' => 'string',
+        'footer_html' => 'string',
         'redirect_url' => 'string'
     ];
 
@@ -78,16 +82,20 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'expiration_interval' => null,
-        'public_web_form' => null,
         'webhook_url' => null,
-        'editable_submissions' => null,
-        'expire_submissions' => null,
+        'scss' => null,
         'expire_after' => null,
         'allow_additional_properties' => null,
-        'document' => null,
-        'name' => null,
+        'description' => null,
         'public_submissions' => null,
         'slack_webhook_url' => null,
+        'header_html' => null,
+        'public_web_form' => null,
+        'editable_submissions' => null,
+        'expire_submissions' => null,
+        'name' => null,
+        'html' => null,
+        'footer_html' => null,
         'redirect_url' => null
     ];
 
@@ -119,16 +127,20 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'expiration_interval' => 'expiration_interval',
-        'public_web_form' => 'public_web_form',
         'webhook_url' => 'webhook_url',
-        'editable_submissions' => 'editable_submissions',
-        'expire_submissions' => 'expire_submissions',
+        'scss' => 'scss',
         'expire_after' => 'expire_after',
         'allow_additional_properties' => 'allow_additional_properties',
-        'document' => 'document',
-        'name' => 'name',
+        'description' => 'description',
         'public_submissions' => 'public_submissions',
         'slack_webhook_url' => 'slack_webhook_url',
+        'header_html' => 'header_html',
+        'public_web_form' => 'public_web_form',
+        'editable_submissions' => 'editable_submissions',
+        'expire_submissions' => 'expire_submissions',
+        'name' => 'name',
+        'html' => 'html',
+        'footer_html' => 'footer_html',
         'redirect_url' => 'redirect_url'
     ];
 
@@ -139,16 +151,20 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'expiration_interval' => 'setExpirationInterval',
-        'public_web_form' => 'setPublicWebForm',
         'webhook_url' => 'setWebhookUrl',
-        'editable_submissions' => 'setEditableSubmissions',
-        'expire_submissions' => 'setExpireSubmissions',
+        'scss' => 'setScss',
         'expire_after' => 'setExpireAfter',
         'allow_additional_properties' => 'setAllowAdditionalProperties',
-        'document' => 'setDocument',
-        'name' => 'setName',
+        'description' => 'setDescription',
         'public_submissions' => 'setPublicSubmissions',
         'slack_webhook_url' => 'setSlackWebhookUrl',
+        'header_html' => 'setHeaderHtml',
+        'public_web_form' => 'setPublicWebForm',
+        'editable_submissions' => 'setEditableSubmissions',
+        'expire_submissions' => 'setExpireSubmissions',
+        'name' => 'setName',
+        'html' => 'setHtml',
+        'footer_html' => 'setFooterHtml',
         'redirect_url' => 'setRedirectUrl'
     ];
 
@@ -159,16 +175,20 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'expiration_interval' => 'getExpirationInterval',
-        'public_web_form' => 'getPublicWebForm',
         'webhook_url' => 'getWebhookUrl',
-        'editable_submissions' => 'getEditableSubmissions',
-        'expire_submissions' => 'getExpireSubmissions',
+        'scss' => 'getScss',
         'expire_after' => 'getExpireAfter',
         'allow_additional_properties' => 'getAllowAdditionalProperties',
-        'document' => 'getDocument',
-        'name' => 'getName',
+        'description' => 'getDescription',
         'public_submissions' => 'getPublicSubmissions',
         'slack_webhook_url' => 'getSlackWebhookUrl',
+        'header_html' => 'getHeaderHtml',
+        'public_web_form' => 'getPublicWebForm',
+        'editable_submissions' => 'getEditableSubmissions',
+        'expire_submissions' => 'getExpireSubmissions',
+        'name' => 'getName',
+        'html' => 'getHtml',
+        'footer_html' => 'getFooterHtml',
         'redirect_url' => 'getRedirectUrl'
     ];
 
@@ -250,16 +270,20 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['expiration_interval'] = isset($data['expiration_interval']) ? $data['expiration_interval'] : null;
-        $this->container['public_web_form'] = isset($data['public_web_form']) ? $data['public_web_form'] : null;
         $this->container['webhook_url'] = isset($data['webhook_url']) ? $data['webhook_url'] : null;
-        $this->container['editable_submissions'] = isset($data['editable_submissions']) ? $data['editable_submissions'] : null;
-        $this->container['expire_submissions'] = isset($data['expire_submissions']) ? $data['expire_submissions'] : null;
+        $this->container['scss'] = isset($data['scss']) ? $data['scss'] : null;
         $this->container['expire_after'] = isset($data['expire_after']) ? $data['expire_after'] : null;
         $this->container['allow_additional_properties'] = isset($data['allow_additional_properties']) ? $data['allow_additional_properties'] : null;
-        $this->container['document'] = isset($data['document']) ? $data['document'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['public_submissions'] = isset($data['public_submissions']) ? $data['public_submissions'] : null;
         $this->container['slack_webhook_url'] = isset($data['slack_webhook_url']) ? $data['slack_webhook_url'] : null;
+        $this->container['header_html'] = isset($data['header_html']) ? $data['header_html'] : null;
+        $this->container['public_web_form'] = isset($data['public_web_form']) ? $data['public_web_form'] : null;
+        $this->container['editable_submissions'] = isset($data['editable_submissions']) ? $data['editable_submissions'] : null;
+        $this->container['expire_submissions'] = isset($data['expire_submissions']) ? $data['expire_submissions'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['html'] = isset($data['html']) ? $data['html'] : null;
+        $this->container['footer_html'] = isset($data['footer_html']) ? $data['footer_html'] : null;
         $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
     }
 
@@ -329,30 +353,6 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets public_web_form
-     *
-     * @return bool|null
-     */
-    public function getPublicWebForm()
-    {
-        return $this->container['public_web_form'];
-    }
-
-    /**
-     * Sets public_web_form
-     *
-     * @param bool|null $public_web_form public_web_form
-     *
-     * @return $this
-     */
-    public function setPublicWebForm($public_web_form)
-    {
-        $this->container['public_web_form'] = $public_web_form;
-
-        return $this;
-    }
-
-    /**
      * Gets webhook_url
      *
      * @return string|null
@@ -377,49 +377,25 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets editable_submissions
+     * Gets scss
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getEditableSubmissions()
+    public function getScss()
     {
-        return $this->container['editable_submissions'];
+        return $this->container['scss'];
     }
 
     /**
-     * Sets editable_submissions
+     * Sets scss
      *
-     * @param bool|null $editable_submissions editable_submissions
+     * @param string|null $scss scss
      *
      * @return $this
      */
-    public function setEditableSubmissions($editable_submissions)
+    public function setScss($scss)
     {
-        $this->container['editable_submissions'] = $editable_submissions;
-
-        return $this;
-    }
-
-    /**
-     * Gets expire_submissions
-     *
-     * @return bool|null
-     */
-    public function getExpireSubmissions()
-    {
-        return $this->container['expire_submissions'];
-    }
-
-    /**
-     * Sets expire_submissions
-     *
-     * @param bool|null $expire_submissions expire_submissions
-     *
-     * @return $this
-     */
-    public function setExpireSubmissions($expire_submissions)
-    {
-        $this->container['expire_submissions'] = $expire_submissions;
+        $this->container['scss'] = $scss;
 
         return $this;
     }
@@ -473,49 +449,25 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets document
-     *
-     * @return \DocSpring\Model\Templatesv2TemplateDocument|null
-     */
-    public function getDocument()
-    {
-        return $this->container['document'];
-    }
-
-    /**
-     * Sets document
-     *
-     * @param \DocSpring\Model\Templatesv2TemplateDocument|null $document document
-     *
-     * @return $this
-     */
-    public function setDocument($document)
-    {
-        $this->container['document'] = $document;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets description
      *
      * @return string|null
      */
-    public function getName()
+    public function getDescription()
     {
-        return $this->container['name'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets name
+     * Sets description
      *
-     * @param string|null $name name
+     * @param string|null $description description
      *
      * @return $this
      */
-    public function setName($name)
+    public function setDescription($description)
     {
-        $this->container['name'] = $name;
+        $this->container['description'] = $description;
 
         return $this;
     }
@@ -564,6 +516,174 @@ class Templatesv2Template implements ModelInterface, ArrayAccess
     public function setSlackWebhookUrl($slack_webhook_url)
     {
         $this->container['slack_webhook_url'] = $slack_webhook_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets header_html
+     *
+     * @return string|null
+     */
+    public function getHeaderHtml()
+    {
+        return $this->container['header_html'];
+    }
+
+    /**
+     * Sets header_html
+     *
+     * @param string|null $header_html header_html
+     *
+     * @return $this
+     */
+    public function setHeaderHtml($header_html)
+    {
+        $this->container['header_html'] = $header_html;
+
+        return $this;
+    }
+
+    /**
+     * Gets public_web_form
+     *
+     * @return bool|null
+     */
+    public function getPublicWebForm()
+    {
+        return $this->container['public_web_form'];
+    }
+
+    /**
+     * Sets public_web_form
+     *
+     * @param bool|null $public_web_form public_web_form
+     *
+     * @return $this
+     */
+    public function setPublicWebForm($public_web_form)
+    {
+        $this->container['public_web_form'] = $public_web_form;
+
+        return $this;
+    }
+
+    /**
+     * Gets editable_submissions
+     *
+     * @return bool|null
+     */
+    public function getEditableSubmissions()
+    {
+        return $this->container['editable_submissions'];
+    }
+
+    /**
+     * Sets editable_submissions
+     *
+     * @param bool|null $editable_submissions editable_submissions
+     *
+     * @return $this
+     */
+    public function setEditableSubmissions($editable_submissions)
+    {
+        $this->container['editable_submissions'] = $editable_submissions;
+
+        return $this;
+    }
+
+    /**
+     * Gets expire_submissions
+     *
+     * @return bool|null
+     */
+    public function getExpireSubmissions()
+    {
+        return $this->container['expire_submissions'];
+    }
+
+    /**
+     * Sets expire_submissions
+     *
+     * @param bool|null $expire_submissions expire_submissions
+     *
+     * @return $this
+     */
+    public function setExpireSubmissions($expire_submissions)
+    {
+        $this->container['expire_submissions'] = $expire_submissions;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets html
+     *
+     * @return string|null
+     */
+    public function getHtml()
+    {
+        return $this->container['html'];
+    }
+
+    /**
+     * Sets html
+     *
+     * @param string|null $html html
+     *
+     * @return $this
+     */
+    public function setHtml($html)
+    {
+        $this->container['html'] = $html;
+
+        return $this;
+    }
+
+    /**
+     * Gets footer_html
+     *
+     * @return string|null
+     */
+    public function getFooterHtml()
+    {
+        return $this->container['footer_html'];
+    }
+
+    /**
+     * Sets footer_html
+     *
+     * @param string|null $footer_html footer_html
+     *
+     * @return $this
+     */
+    public function setFooterHtml($footer_html)
+    {
+        $this->container['footer_html'] = $footer_html;
 
         return $this;
     }

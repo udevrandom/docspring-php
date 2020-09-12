@@ -57,7 +57,7 @@ class CreateTemplateData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'template' => '\DocSpring\Model\Templatesv2Template'
+        'template' => '\DocSpring\Model\TemplatesdesccachedUploadTemplate'
     ];
 
     /**
@@ -210,7 +210,7 @@ class CreateTemplateData implements ModelInterface, ArrayAccess
     /**
      * Gets template
      *
-     * @return \DocSpring\Model\Templatesv2Template
+     * @return \DocSpring\Model\TemplatesdesccachedUploadTemplate
      */
     public function getTemplate()
     {
@@ -220,7 +220,7 @@ class CreateTemplateData implements ModelInterface, ArrayAccess
     /**
      * Sets template
      *
-     * @param \DocSpring\Model\Templatesv2Template $template template
+     * @param \DocSpring\Model\TemplatesdesccachedUploadTemplate $template template
      *
      * @return $this
      */

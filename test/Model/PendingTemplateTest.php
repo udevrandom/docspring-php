@@ -112,6 +112,13 @@ class PendingTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
      * Test attribute "public_submissions"
      */
     public function testPropertyPublicSubmissions()

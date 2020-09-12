@@ -140,6 +140,13 @@ class SubmissionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "pdf_hash"
+     */
+    public function testPropertyPdfHash()
+    {
+    }
+
+    /**
      * Test attribute "download_url"
      */
     public function testPropertyDownloadUrl()

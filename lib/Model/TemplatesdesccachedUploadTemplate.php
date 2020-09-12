@@ -1,6 +1,6 @@
 <?php
 /**
- * Template
+ * TemplatesdesccachedUploadTemplate
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * Template Class Doc Comment
+ * TemplatesdesccachedUploadTemplate Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Template implements ModelInterface, ArrayAccess
+class TemplatesdesccachedUploadTemplate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Template implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'template';
+    protected static $openAPIModelName = 'templatesdesccached_upload_template';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,23 +59,22 @@ class Template implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'expiration_interval' => 'string',
         'webhook_url' => 'string',
-        'parent_folder_id' => 'string',
+        'scss' => 'string',
         'expire_after' => 'float',
         'allow_additional_properties' => 'bool',
+        'document' => '\DocSpring\Model\TemplatesdesccachedUploadTemplateDocument',
         'description' => 'string',
         'public_submissions' => 'bool',
         'slack_webhook_url' => 'string',
-        'path' => 'string',
+        'header_html' => 'string',
         'public_web_form' => 'bool',
         'editable_submissions' => 'bool',
         'expire_submissions' => 'bool',
         'name' => 'string',
-        'permanent_document_url' => 'string',
+        'html' => 'string',
+        'footer_html' => 'string',
         'template_type' => 'string',
-        'id' => 'string',
-        'page_dimensions' => 'float[][]',
-        'redirect_url' => 'string',
-        'document_url' => 'string'
+        'redirect_url' => 'string'
     ];
 
     /**
@@ -86,23 +85,22 @@ class Template implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'expiration_interval' => null,
         'webhook_url' => null,
-        'parent_folder_id' => null,
+        'scss' => null,
         'expire_after' => null,
         'allow_additional_properties' => null,
+        'document' => null,
         'description' => null,
         'public_submissions' => null,
         'slack_webhook_url' => null,
-        'path' => null,
+        'header_html' => null,
         'public_web_form' => null,
         'editable_submissions' => null,
         'expire_submissions' => null,
         'name' => null,
-        'permanent_document_url' => null,
+        'html' => null,
+        'footer_html' => null,
         'template_type' => null,
-        'id' => null,
-        'page_dimensions' => null,
-        'redirect_url' => null,
-        'document_url' => null
+        'redirect_url' => null
     ];
 
     /**
@@ -134,23 +132,22 @@ class Template implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'expiration_interval' => 'expiration_interval',
         'webhook_url' => 'webhook_url',
-        'parent_folder_id' => 'parent_folder_id',
+        'scss' => 'scss',
         'expire_after' => 'expire_after',
         'allow_additional_properties' => 'allow_additional_properties',
+        'document' => 'document',
         'description' => 'description',
         'public_submissions' => 'public_submissions',
         'slack_webhook_url' => 'slack_webhook_url',
-        'path' => 'path',
+        'header_html' => 'header_html',
         'public_web_form' => 'public_web_form',
         'editable_submissions' => 'editable_submissions',
         'expire_submissions' => 'expire_submissions',
         'name' => 'name',
-        'permanent_document_url' => 'permanent_document_url',
+        'html' => 'html',
+        'footer_html' => 'footer_html',
         'template_type' => 'template_type',
-        'id' => 'id',
-        'page_dimensions' => 'page_dimensions',
-        'redirect_url' => 'redirect_url',
-        'document_url' => 'document_url'
+        'redirect_url' => 'redirect_url'
     ];
 
     /**
@@ -161,23 +158,22 @@ class Template implements ModelInterface, ArrayAccess
     protected static $setters = [
         'expiration_interval' => 'setExpirationInterval',
         'webhook_url' => 'setWebhookUrl',
-        'parent_folder_id' => 'setParentFolderId',
+        'scss' => 'setScss',
         'expire_after' => 'setExpireAfter',
         'allow_additional_properties' => 'setAllowAdditionalProperties',
+        'document' => 'setDocument',
         'description' => 'setDescription',
         'public_submissions' => 'setPublicSubmissions',
         'slack_webhook_url' => 'setSlackWebhookUrl',
-        'path' => 'setPath',
+        'header_html' => 'setHeaderHtml',
         'public_web_form' => 'setPublicWebForm',
         'editable_submissions' => 'setEditableSubmissions',
         'expire_submissions' => 'setExpireSubmissions',
         'name' => 'setName',
-        'permanent_document_url' => 'setPermanentDocumentUrl',
+        'html' => 'setHtml',
+        'footer_html' => 'setFooterHtml',
         'template_type' => 'setTemplateType',
-        'id' => 'setId',
-        'page_dimensions' => 'setPageDimensions',
-        'redirect_url' => 'setRedirectUrl',
-        'document_url' => 'setDocumentUrl'
+        'redirect_url' => 'setRedirectUrl'
     ];
 
     /**
@@ -188,23 +184,22 @@ class Template implements ModelInterface, ArrayAccess
     protected static $getters = [
         'expiration_interval' => 'getExpirationInterval',
         'webhook_url' => 'getWebhookUrl',
-        'parent_folder_id' => 'getParentFolderId',
+        'scss' => 'getScss',
         'expire_after' => 'getExpireAfter',
         'allow_additional_properties' => 'getAllowAdditionalProperties',
+        'document' => 'getDocument',
         'description' => 'getDescription',
         'public_submissions' => 'getPublicSubmissions',
         'slack_webhook_url' => 'getSlackWebhookUrl',
-        'path' => 'getPath',
+        'header_html' => 'getHeaderHtml',
         'public_web_form' => 'getPublicWebForm',
         'editable_submissions' => 'getEditableSubmissions',
         'expire_submissions' => 'getExpireSubmissions',
         'name' => 'getName',
-        'permanent_document_url' => 'getPermanentDocumentUrl',
+        'html' => 'getHtml',
+        'footer_html' => 'getFooterHtml',
         'template_type' => 'getTemplateType',
-        'id' => 'getId',
-        'page_dimensions' => 'getPageDimensions',
-        'redirect_url' => 'getRedirectUrl',
-        'document_url' => 'getDocumentUrl'
+        'redirect_url' => 'getRedirectUrl'
     ];
 
     /**
@@ -251,6 +246,8 @@ class Template implements ModelInterface, ArrayAccess
     const EXPIRATION_INTERVAL_MINUTES = 'minutes';
     const EXPIRATION_INTERVAL_HOURS = 'hours';
     const EXPIRATION_INTERVAL_DAYS = 'days';
+    const TEMPLATE_TYPE_PDF = 'pdf';
+    const TEMPLATE_TYPE_HTML = 'html';
     
 
     
@@ -265,6 +262,19 @@ class Template implements ModelInterface, ArrayAccess
             self::EXPIRATION_INTERVAL_MINUTES,
             self::EXPIRATION_INTERVAL_HOURS,
             self::EXPIRATION_INTERVAL_DAYS,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTemplateTypeAllowableValues()
+    {
+        return [
+            self::TEMPLATE_TYPE_PDF,
+            self::TEMPLATE_TYPE_HTML,
         ];
     }
     
@@ -286,23 +296,22 @@ class Template implements ModelInterface, ArrayAccess
     {
         $this->container['expiration_interval'] = isset($data['expiration_interval']) ? $data['expiration_interval'] : null;
         $this->container['webhook_url'] = isset($data['webhook_url']) ? $data['webhook_url'] : null;
-        $this->container['parent_folder_id'] = isset($data['parent_folder_id']) ? $data['parent_folder_id'] : null;
+        $this->container['scss'] = isset($data['scss']) ? $data['scss'] : null;
         $this->container['expire_after'] = isset($data['expire_after']) ? $data['expire_after'] : null;
         $this->container['allow_additional_properties'] = isset($data['allow_additional_properties']) ? $data['allow_additional_properties'] : null;
+        $this->container['document'] = isset($data['document']) ? $data['document'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['public_submissions'] = isset($data['public_submissions']) ? $data['public_submissions'] : null;
         $this->container['slack_webhook_url'] = isset($data['slack_webhook_url']) ? $data['slack_webhook_url'] : null;
-        $this->container['path'] = isset($data['path']) ? $data['path'] : null;
+        $this->container['header_html'] = isset($data['header_html']) ? $data['header_html'] : null;
         $this->container['public_web_form'] = isset($data['public_web_form']) ? $data['public_web_form'] : null;
         $this->container['editable_submissions'] = isset($data['editable_submissions']) ? $data['editable_submissions'] : null;
         $this->container['expire_submissions'] = isset($data['expire_submissions']) ? $data['expire_submissions'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['permanent_document_url'] = isset($data['permanent_document_url']) ? $data['permanent_document_url'] : null;
+        $this->container['html'] = isset($data['html']) ? $data['html'] : null;
+        $this->container['footer_html'] = isset($data['footer_html']) ? $data['footer_html'] : null;
         $this->container['template_type'] = isset($data['template_type']) ? $data['template_type'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['page_dimensions'] = isset($data['page_dimensions']) ? $data['page_dimensions'] : null;
         $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
-        $this->container['document_url'] = isset($data['document_url']) ? $data['document_url'] : null;
     }
 
     /**
@@ -318,6 +327,14 @@ class Template implements ModelInterface, ArrayAccess
         if (!is_null($this->container['expiration_interval']) && !in_array($this->container['expiration_interval'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'expiration_interval', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTemplateTypeAllowableValues();
+        if (!is_null($this->container['template_type']) && !in_array($this->container['template_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'template_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -395,25 +412,25 @@ class Template implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets parent_folder_id
+     * Gets scss
      *
      * @return string|null
      */
-    public function getParentFolderId()
+    public function getScss()
     {
-        return $this->container['parent_folder_id'];
+        return $this->container['scss'];
     }
 
     /**
-     * Sets parent_folder_id
+     * Sets scss
      *
-     * @param string|null $parent_folder_id parent_folder_id
+     * @param string|null $scss scss
      *
      * @return $this
      */
-    public function setParentFolderId($parent_folder_id)
+    public function setScss($scss)
     {
-        $this->container['parent_folder_id'] = $parent_folder_id;
+        $this->container['scss'] = $scss;
 
         return $this;
     }
@@ -462,6 +479,30 @@ class Template implements ModelInterface, ArrayAccess
     public function setAllowAdditionalProperties($allow_additional_properties)
     {
         $this->container['allow_additional_properties'] = $allow_additional_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets document
+     *
+     * @return \DocSpring\Model\TemplatesdesccachedUploadTemplateDocument|null
+     */
+    public function getDocument()
+    {
+        return $this->container['document'];
+    }
+
+    /**
+     * Sets document
+     *
+     * @param \DocSpring\Model\TemplatesdesccachedUploadTemplateDocument|null $document document
+     *
+     * @return $this
+     */
+    public function setDocument($document)
+    {
+        $this->container['document'] = $document;
 
         return $this;
     }
@@ -539,25 +580,25 @@ class Template implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets path
+     * Gets header_html
      *
      * @return string|null
      */
-    public function getPath()
+    public function getHeaderHtml()
     {
-        return $this->container['path'];
+        return $this->container['header_html'];
     }
 
     /**
-     * Sets path
+     * Sets header_html
      *
-     * @param string|null $path path
+     * @param string|null $header_html header_html
      *
      * @return $this
      */
-    public function setPath($path)
+    public function setHeaderHtml($header_html)
     {
-        $this->container['path'] = $path;
+        $this->container['header_html'] = $header_html;
 
         return $this;
     }
@@ -659,25 +700,49 @@ class Template implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets permanent_document_url
+     * Gets html
      *
      * @return string|null
      */
-    public function getPermanentDocumentUrl()
+    public function getHtml()
     {
-        return $this->container['permanent_document_url'];
+        return $this->container['html'];
     }
 
     /**
-     * Sets permanent_document_url
+     * Sets html
      *
-     * @param string|null $permanent_document_url permanent_document_url
+     * @param string|null $html html
      *
      * @return $this
      */
-    public function setPermanentDocumentUrl($permanent_document_url)
+    public function setHtml($html)
     {
-        $this->container['permanent_document_url'] = $permanent_document_url;
+        $this->container['html'] = $html;
+
+        return $this;
+    }
+
+    /**
+     * Gets footer_html
+     *
+     * @return string|null
+     */
+    public function getFooterHtml()
+    {
+        return $this->container['footer_html'];
+    }
+
+    /**
+     * Sets footer_html
+     *
+     * @param string|null $footer_html footer_html
+     *
+     * @return $this
+     */
+    public function setFooterHtml($footer_html)
+    {
+        $this->container['footer_html'] = $footer_html;
 
         return $this;
     }
@@ -701,55 +766,16 @@ class Template implements ModelInterface, ArrayAccess
      */
     public function setTemplateType($template_type)
     {
+        $allowedValues = $this->getTemplateTypeAllowableValues();
+        if (!is_null($template_type) && !in_array($template_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'template_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['template_type'] = $template_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string|null $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets page_dimensions
-     *
-     * @return float[][]|null
-     */
-    public function getPageDimensions()
-    {
-        return $this->container['page_dimensions'];
-    }
-
-    /**
-     * Sets page_dimensions
-     *
-     * @param float[][]|null $page_dimensions page_dimensions
-     *
-     * @return $this
-     */
-    public function setPageDimensions($page_dimensions)
-    {
-        $this->container['page_dimensions'] = $page_dimensions;
 
         return $this;
     }
@@ -774,30 +800,6 @@ class Template implements ModelInterface, ArrayAccess
     public function setRedirectUrl($redirect_url)
     {
         $this->container['redirect_url'] = $redirect_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets document_url
-     *
-     * @return string|null
-     */
-    public function getDocumentUrl()
-    {
-        return $this->container['document_url'];
-    }
-
-    /**
-     * Sets document_url
-     *
-     * @param string|null $document_url document_url
-     *
-     * @return $this
-     */
-    public function setDocumentUrl($document_url)
-    {
-        $this->container['document_url'] = $document_url;
 
         return $this;
     }

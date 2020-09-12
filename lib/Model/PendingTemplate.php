@@ -62,6 +62,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         'parent_folder_id' => 'string',
         'expire_after' => 'float',
         'allow_additional_properties' => 'bool',
+        'description' => 'string',
         'public_submissions' => 'bool',
         'slack_webhook_url' => 'string',
         'path' => 'string',
@@ -85,6 +86,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         'parent_folder_id' => null,
         'expire_after' => null,
         'allow_additional_properties' => null,
+        'description' => null,
         'public_submissions' => null,
         'slack_webhook_url' => null,
         'path' => null,
@@ -129,6 +131,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         'parent_folder_id' => 'parent_folder_id',
         'expire_after' => 'expire_after',
         'allow_additional_properties' => 'allow_additional_properties',
+        'description' => 'description',
         'public_submissions' => 'public_submissions',
         'slack_webhook_url' => 'slack_webhook_url',
         'path' => 'path',
@@ -152,6 +155,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         'parent_folder_id' => 'setParentFolderId',
         'expire_after' => 'setExpireAfter',
         'allow_additional_properties' => 'setAllowAdditionalProperties',
+        'description' => 'setDescription',
         'public_submissions' => 'setPublicSubmissions',
         'slack_webhook_url' => 'setSlackWebhookUrl',
         'path' => 'setPath',
@@ -175,6 +179,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         'parent_folder_id' => 'getParentFolderId',
         'expire_after' => 'getExpireAfter',
         'allow_additional_properties' => 'getAllowAdditionalProperties',
+        'description' => 'getDescription',
         'public_submissions' => 'getPublicSubmissions',
         'slack_webhook_url' => 'getSlackWebhookUrl',
         'path' => 'getPath',
@@ -269,6 +274,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         $this->container['parent_folder_id'] = isset($data['parent_folder_id']) ? $data['parent_folder_id'] : null;
         $this->container['expire_after'] = isset($data['expire_after']) ? $data['expire_after'] : null;
         $this->container['allow_additional_properties'] = isset($data['allow_additional_properties']) ? $data['allow_additional_properties'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['public_submissions'] = isset($data['public_submissions']) ? $data['public_submissions'] : null;
         $this->container['slack_webhook_url'] = isset($data['slack_webhook_url']) ? $data['slack_webhook_url'] : null;
         $this->container['path'] = isset($data['path']) ? $data['path'] : null;
@@ -438,6 +444,30 @@ class PendingTemplate implements ModelInterface, ArrayAccess
     public function setAllowAdditionalProperties($allow_additional_properties)
     {
         $this->container['allow_additional_properties'] = $allow_additional_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }

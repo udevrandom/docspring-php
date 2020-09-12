@@ -1,6 +1,6 @@
 <?php
 /**
- * TemplateTest
+ * TemplatestemplateIdTemplateTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * TemplateTest Class Doc Comment
+ * TemplatestemplateIdTemplateTest Class Doc Comment
  *
  * @category    Class
- * @description Template
+ * @description TemplatestemplateIdTemplate
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TemplateTest extends \PHPUnit_Framework_TestCase
+class TemplatestemplateIdTemplateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Template"
+     * Test "TemplatestemplateIdTemplate"
      */
-    public function testTemplate()
+    public function testTemplatestemplateIdTemplate()
     {
     }
 
@@ -91,9 +91,9 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "parent_folder_id"
+     * Test attribute "scss"
      */
-    public function testPropertyParentFolderId()
+    public function testPropertyScss()
     {
     }
 
@@ -133,9 +133,9 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "path"
+     * Test attribute "header_html"
      */
-    public function testPropertyPath()
+    public function testPropertyHeaderHtml()
     {
     }
 
@@ -168,30 +168,16 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "permanent_document_url"
+     * Test attribute "html"
      */
-    public function testPropertyPermanentDocumentUrl()
+    public function testPropertyHtml()
     {
     }
 
     /**
-     * Test attribute "template_type"
+     * Test attribute "footer_html"
      */
-    public function testPropertyTemplateType()
-    {
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "page_dimensions"
-     */
-    public function testPropertyPageDimensions()
+    public function testPropertyFooterHtml()
     {
     }
 
@@ -199,13 +185,6 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
      * Test attribute "redirect_url"
      */
     public function testPropertyRedirectUrl()
-    {
-    }
-
-    /**
-     * Test attribute "document_url"
-     */
-    public function testPropertyDocumentUrl()
     {
     }
 }

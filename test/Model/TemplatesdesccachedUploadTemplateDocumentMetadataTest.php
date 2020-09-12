@@ -1,6 +1,6 @@
 <?php
 /**
- * CombinedSubmissionTest
+ * TemplatesdesccachedUploadTemplateDocumentMetadataTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * CombinedSubmissionTest Class Doc Comment
+ * TemplatesdesccachedUploadTemplateDocumentMetadataTest Class Doc Comment
  *
  * @category    Class
- * @description CombinedSubmission
+ * @description TemplatesdesccachedUploadTemplateDocumentMetadata
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CombinedSubmissionTest extends \PHPUnit_Framework_TestCase
+class TemplatesdesccachedUploadTemplateDocumentMetadataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,79 +70,30 @@ class CombinedSubmissionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CombinedSubmission"
+     * Test "TemplatesdesccachedUploadTemplateDocumentMetadata"
      */
-    public function testCombinedSubmission()
+    public function testTemplatesdesccachedUploadTemplateDocumentMetadata()
     {
     }
 
     /**
-     * Test attribute "metadata"
+     * Test attribute "filename"
      */
-    public function testPropertyMetadata()
+    public function testPropertyFilename()
     {
     }
 
     /**
-     * Test attribute "expired"
+     * Test attribute "size"
      */
-    public function testPropertyExpired()
+    public function testPropertySize()
     {
     }
 
     /**
-     * Test attribute "expires_at"
+     * Test attribute "mime_type"
      */
-    public function testPropertyExpiresAt()
-    {
-    }
-
-    /**
-     * Test attribute "source_pdfs"
-     */
-    public function testPropertySourcePdfs()
-    {
-    }
-
-    /**
-     * Test attribute "pdf_hash"
-     */
-    public function testPropertyPdfHash()
-    {
-    }
-
-    /**
-     * Test attribute "download_url"
-     */
-    public function testPropertyDownloadUrl()
-    {
-    }
-
-    /**
-     * Test attribute "submission_ids"
-     */
-    public function testPropertySubmissionIds()
-    {
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "state"
-     */
-    public function testPropertyState()
-    {
-    }
-
-    /**
-     * Test attribute "actions"
-     */
-    public function testPropertyActions()
+    public function testPropertyMimeType()
     {
     }
 }

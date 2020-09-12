@@ -1,6 +1,6 @@
 <?php
 /**
- * SubmissionData
+ * TemplatesdesccachedUploadTemplateDocument
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * SubmissionData Class Doc Comment
+ * TemplatesdesccachedUploadTemplateDocument Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class SubmissionData implements ModelInterface, ArrayAccess
+class TemplatesdesccachedUploadTemplateDocument implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SubmissionData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'submission_data';
+    protected static $openAPIModelName = 'templatesdesccached_upload_template_document';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,9 @@ class SubmissionData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'test' => 'bool',
-        'data' => 'object',
-        'html' => 'string',
-        'css' => 'string',
-        'metadata' => 'object',
-        'field_overrides' => 'object',
-        'data_requests' => '\DocSpring\Model\CreateSubmissionDataRequestData[]'
+        'metadata' => '\DocSpring\Model\TemplatesdesccachedUploadTemplateDocumentMetadata',
+        'id' => 'string',
+        'storage' => 'string'
     ];
 
     /**
@@ -72,13 +68,9 @@ class SubmissionData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'test' => null,
-        'data' => null,
-        'html' => null,
-        'css' => null,
         'metadata' => null,
-        'field_overrides' => null,
-        'data_requests' => null
+        'id' => null,
+        'storage' => null
     ];
 
     /**
@@ -108,13 +100,9 @@ class SubmissionData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'test' => 'test',
-        'data' => 'data',
-        'html' => 'html',
-        'css' => 'css',
         'metadata' => 'metadata',
-        'field_overrides' => 'field_overrides',
-        'data_requests' => 'data_requests'
+        'id' => 'id',
+        'storage' => 'storage'
     ];
 
     /**
@@ -123,13 +111,9 @@ class SubmissionData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'test' => 'setTest',
-        'data' => 'setData',
-        'html' => 'setHtml',
-        'css' => 'setCss',
         'metadata' => 'setMetadata',
-        'field_overrides' => 'setFieldOverrides',
-        'data_requests' => 'setDataRequests'
+        'id' => 'setId',
+        'storage' => 'setStorage'
     ];
 
     /**
@@ -138,13 +122,9 @@ class SubmissionData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'test' => 'getTest',
-        'data' => 'getData',
-        'html' => 'getHtml',
-        'css' => 'getCss',
         'metadata' => 'getMetadata',
-        'field_overrides' => 'getFieldOverrides',
-        'data_requests' => 'getDataRequests'
+        'id' => 'getId',
+        'storage' => 'getStorage'
     ];
 
     /**
@@ -188,8 +168,21 @@ class SubmissionData implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const STORAGE_CACHE = 'cache';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStorageAllowableValues()
+    {
+        return [
+            self::STORAGE_CACHE,
+        ];
+    }
     
 
     /**
@@ -207,13 +200,9 @@ class SubmissionData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['test'] = isset($data['test']) ? $data['test'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
-        $this->container['html'] = isset($data['html']) ? $data['html'] : null;
-        $this->container['css'] = isset($data['css']) ? $data['css'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
-        $this->container['field_overrides'] = isset($data['field_overrides']) ? $data['field_overrides'] : null;
-        $this->container['data_requests'] = isset($data['data_requests']) ? $data['data_requests'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['storage'] = isset($data['storage']) ? $data['storage'] : null;
     }
 
     /**
@@ -225,9 +214,14 @@ class SubmissionData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
+        $allowedValues = $this->getStorageAllowableValues();
+        if (!is_null($this->container['storage']) && !in_array($this->container['storage'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'storage', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
         }
+
         return $invalidProperties;
     }
 
@@ -244,105 +238,9 @@ class SubmissionData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets test
-     *
-     * @return bool|null
-     */
-    public function getTest()
-    {
-        return $this->container['test'];
-    }
-
-    /**
-     * Sets test
-     *
-     * @param bool|null $test test
-     *
-     * @return $this
-     */
-    public function setTest($test)
-    {
-        $this->container['test'] = $test;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return object
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param object $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets html
-     *
-     * @return string|null
-     */
-    public function getHtml()
-    {
-        return $this->container['html'];
-    }
-
-    /**
-     * Sets html
-     *
-     * @param string|null $html html
-     *
-     * @return $this
-     */
-    public function setHtml($html)
-    {
-        $this->container['html'] = $html;
-
-        return $this;
-    }
-
-    /**
-     * Gets css
-     *
-     * @return string|null
-     */
-    public function getCss()
-    {
-        return $this->container['css'];
-    }
-
-    /**
-     * Sets css
-     *
-     * @param string|null $css css
-     *
-     * @return $this
-     */
-    public function setCss($css)
-    {
-        $this->container['css'] = $css;
-
-        return $this;
-    }
-
-    /**
      * Gets metadata
      *
-     * @return object|null
+     * @return \DocSpring\Model\TemplatesdesccachedUploadTemplateDocumentMetadata|null
      */
     public function getMetadata()
     {
@@ -352,7 +250,7 @@ class SubmissionData implements ModelInterface, ArrayAccess
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param \DocSpring\Model\TemplatesdesccachedUploadTemplateDocumentMetadata|null $metadata metadata
      *
      * @return $this
      */
@@ -364,49 +262,58 @@ class SubmissionData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets field_overrides
+     * Gets id
      *
-     * @return object|null
+     * @return string|null
      */
-    public function getFieldOverrides()
+    public function getId()
     {
-        return $this->container['field_overrides'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets field_overrides
+     * Sets id
      *
-     * @param object|null $field_overrides field_overrides
+     * @param string|null $id id
      *
      * @return $this
      */
-    public function setFieldOverrides($field_overrides)
+    public function setId($id)
     {
-        $this->container['field_overrides'] = $field_overrides;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets data_requests
+     * Gets storage
      *
-     * @return \DocSpring\Model\CreateSubmissionDataRequestData[]|null
+     * @return string|null
      */
-    public function getDataRequests()
+    public function getStorage()
     {
-        return $this->container['data_requests'];
+        return $this->container['storage'];
     }
 
     /**
-     * Sets data_requests
+     * Sets storage
      *
-     * @param \DocSpring\Model\CreateSubmissionDataRequestData[]|null $data_requests data_requests
+     * @param string|null $storage storage
      *
      * @return $this
      */
-    public function setDataRequests($data_requests)
+    public function setStorage($storage)
     {
-        $this->container['data_requests'] = $data_requests;
+        $allowedValues = $this->getStorageAllowableValues();
+        if (!is_null($storage) && !in_array($storage, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'storage', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['storage'] = $storage;
 
         return $this;
     }

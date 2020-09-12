@@ -93,6 +93,11 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         "description" => 'This is a test PDF!',
       ]);
       $submission_data->setTest(false);
+      $submission_data->setFieldOverrides([
+        "title" => [
+          "required" => false
+        ]
+      ]);
       $submission = $docspring->generatePDF($template_id, $submission_data);
 
       $this->assertEquals(False, $submission->getExpired());

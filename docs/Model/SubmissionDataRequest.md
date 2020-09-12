@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **auth_user_id_hash** | **string** |  | [optional] 
 **auth_username_hash** | **string** |  | [optional] 
 **auth_phone_number_hash** | **string** |  | [optional] 
+**ip_address** | **string** |  | [optional] 
+**user_agent** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

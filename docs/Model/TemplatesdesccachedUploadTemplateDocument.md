@@ -1,9 +1,9 @@
-# Templatesv2TemplateDocument
+# TemplatesdesccachedUploadTemplateDocument
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**\DocSpring\Model\Templatesv2TemplateDocumentMetadata**](Templatesv2TemplateDocumentMetadata.md) |  | [optional] 
+**metadata** | [**\DocSpring\Model\TemplatesdesccachedUploadTemplateDocumentMetadata**](TemplatesdesccachedUploadTemplateDocumentMetadata.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **storage** | **string** |  | [optional] 
 
