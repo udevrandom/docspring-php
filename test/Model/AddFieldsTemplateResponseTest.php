@@ -1,6 +1,6 @@
 <?php
 /**
- * TemplatesdesccachedUploadTemplateDocumentTest
+ * AddFieldsTemplateResponseTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * TemplatesdesccachedUploadTemplateDocumentTest Class Doc Comment
+ * AddFieldsTemplateResponseTest Class Doc Comment
  *
  * @category    Class
- * @description TemplatesdesccachedUploadTemplateDocument
+ * @description AddFieldsTemplateResponse
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TemplatesdesccachedUploadTemplateDocumentTest extends \PHPUnit_Framework_TestCase
+class AddFieldsTemplateResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,30 +70,30 @@ class TemplatesdesccachedUploadTemplateDocumentTest extends \PHPUnit_Framework_T
     }
 
     /**
-     * Test "TemplatesdesccachedUploadTemplateDocument"
+     * Test "AddFieldsTemplateResponse"
      */
-    public function testTemplatesdesccachedUploadTemplateDocument()
+    public function testAddFieldsTemplateResponse()
     {
     }
 
     /**
-     * Test attribute "metadata"
+     * Test attribute "new_field_ids"
      */
-    public function testPropertyMetadata()
+    public function testPropertyNewFieldIds()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "errors"
      */
-    public function testPropertyId()
+    public function testPropertyErrors()
     {
     }
 
     /**
-     * Test attribute "storage"
+     * Test attribute "status"
      */
-    public function testPropertyStorage()
+    public function testPropertyStatus()
     {
     }
 }

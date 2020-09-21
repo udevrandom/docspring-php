@@ -1,6 +1,6 @@
 <?php
 /**
- * TemplateTest
+ * HtmlTemplateDataTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * TemplateTest Class Doc Comment
+ * HtmlTemplateDataTest Class Doc Comment
  *
  * @category    Class
- * @description Template
+ * @description HtmlTemplateData
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TemplateTest extends \PHPUnit_Framework_TestCase
+class HtmlTemplateDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Template"
+     * Test "HtmlTemplateData"
      */
-    public function testTemplate()
+    public function testHtmlTemplateData()
     {
     }
 
@@ -91,9 +91,9 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "parent_folder_id"
+     * Test attribute "scss"
      */
-    public function testPropertyParentFolderId()
+    public function testPropertyScss()
     {
     }
 
@@ -133,9 +133,9 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "path"
+     * Test attribute "header_html"
      */
-    public function testPropertyPath()
+    public function testPropertyHeaderHtml()
     {
     }
 
@@ -168,9 +168,16 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "permanent_document_url"
+     * Test attribute "html"
      */
-    public function testPropertyPermanentDocumentUrl()
+    public function testPropertyHtml()
+    {
+    }
+
+    /**
+     * Test attribute "footer_html"
+     */
+    public function testPropertyFooterHtml()
     {
     }
 
@@ -182,37 +189,9 @@ class TemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "page_dimensions"
-     */
-    public function testPropertyPageDimensions()
-    {
-    }
-
-    /**
-     * Test attribute "locked"
-     */
-    public function testPropertyLocked()
-    {
-    }
-
-    /**
      * Test attribute "redirect_url"
      */
     public function testPropertyRedirectUrl()
-    {
-    }
-
-    /**
-     * Test attribute "document_url"
-     */
-    public function testPropertyDocumentUrl()
     {
     }
 }

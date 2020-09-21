@@ -1,6 +1,6 @@
 <?php
 /**
- * TemplatesdesccachedUploadTemplateDocumentMetadata
+ * UploadTemplateDataDocumentMetadata
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * TemplatesdesccachedUploadTemplateDocumentMetadata Class Doc Comment
+ * UploadTemplateDataDocumentMetadata Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class TemplatesdesccachedUploadTemplateDocumentMetadata implements ModelInterface, ArrayAccess
+class UploadTemplateDataDocumentMetadata implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TemplatesdesccachedUploadTemplateDocumentMetadata implements ModelInterfac
       *
       * @var string
       */
-    protected static $openAPIModelName = 'templatesdesccached_upload_template_document_metadata';
+    protected static $openAPIModelName = 'upload_template_data_document_metadata';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

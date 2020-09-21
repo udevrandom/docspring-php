@@ -323,7 +323,7 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
     public function testCreateHTMLTemplate()
     {
       $docspring = $this->docspring;
-      $create_template_data = new \DocSpring\Model\CreateTemplateData1([
+      $create_template_data = new \DocSpring\Model\CreateHtmlTemplateData([
         "template" => [
           "template_type" => "html",
           "name" => "Test HTML Template",
@@ -332,7 +332,7 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
           "header_html" => "Test Header HTML",
           "footer_html" => "Test Header HTML",
         ]
-      ]); // \DocSpring\Model\CreateTemplateData1 |
+      ]); // \DocSpring\Model\CreateHtmlTemplateData |
       $response = $this->docspring->createHTMLTemplate($create_template_data);
       $this->assertStringStartsWith('tpl_', $response->getId());
       $this->assertEquals('Test HTML Template', $response->getName());

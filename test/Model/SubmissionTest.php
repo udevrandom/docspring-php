@@ -140,6 +140,13 @@ class SubmissionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "truncated_text"
+     */
+    public function testPropertyTruncatedText()
+    {
+    }
+
+    /**
      * Test attribute "pdf_hash"
      */
     public function testPropertyPdfHash()

@@ -1,6 +1,6 @@
 <?php
 /**
- * TemplatesdesccachedUploadTemplateTest
+ * UploadTemplateDataTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * TemplatesdesccachedUploadTemplateTest Class Doc Comment
+ * UploadTemplateDataTest Class Doc Comment
  *
  * @category    Class
- * @description TemplatesdesccachedUploadTemplate
+ * @description UploadTemplateData
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TemplatesdesccachedUploadTemplateTest extends \PHPUnit_Framework_TestCase
+class UploadTemplateDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class TemplatesdesccachedUploadTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "TemplatesdesccachedUploadTemplate"
+     * Test "UploadTemplateData"
      */
-    public function testTemplatesdesccachedUploadTemplate()
+    public function testUploadTemplateData()
     {
     }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * TemplatesdesccachedUploadTemplate
+ * HtmlTemplateData
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * TemplatesdesccachedUploadTemplate Class Doc Comment
+ * HtmlTemplateData Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class TemplatesdesccachedUploadTemplate implements ModelInterface, ArrayAccess
+class HtmlTemplateData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TemplatesdesccachedUploadTemplate implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'templatesdesccached_upload_template';
+    protected static $openAPIModelName = 'html_template_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -62,7 +62,6 @@ class TemplatesdesccachedUploadTemplate implements ModelInterface, ArrayAccess
         'scss' => 'string',
         'expire_after' => 'float',
         'allow_additional_properties' => 'bool',
-        'document' => '\DocSpring\Model\TemplatesdesccachedUploadTemplateDocument',
         'description' => 'string',
         'public_submissions' => 'bool',
         'slack_webhook_url' => 'string',
@@ -88,7 +87,6 @@ class TemplatesdesccachedUploadTemplate implements ModelInterface, ArrayAccess
         'scss' => null,
         'expire_after' => null,
         'allow_additional_properties' => null,
-        'document' => null,
         'description' => null,
         'public_submissions' => null,
         'slack_webhook_url' => null,
@@ -135,7 +133,6 @@ class TemplatesdesccachedUploadTemplate implements ModelInterface, ArrayAccess
         'scss' => 'scss',
         'expire_after' => 'expire_after',
         'allow_additional_properties' => 'allow_additional_properties',
-        'document' => 'document',
         'description' => 'description',
         'public_submissions' => 'public_submissions',
         'slack_webhook_url' => 'slack_webhook_url',
@@ -161,7 +158,6 @@ class TemplatesdesccachedUploadTemplate implements ModelInterface, ArrayAccess
         'scss' => 'setScss',
         'expire_after' => 'setExpireAfter',
         'allow_additional_properties' => 'setAllowAdditionalProperties',
-        'document' => 'setDocument',
         'description' => 'setDescription',
         'public_submissions' => 'setPublicSubmissions',
         'slack_webhook_url' => 'setSlackWebhookUrl',
@@ -187,7 +183,6 @@ class TemplatesdesccachedUploadTemplate implements ModelInterface, ArrayAccess
         'scss' => 'getScss',
         'expire_after' => 'getExpireAfter',
         'allow_additional_properties' => 'getAllowAdditionalProperties',
-        'document' => 'getDocument',
         'description' => 'getDescription',
         'public_submissions' => 'getPublicSubmissions',
         'slack_webhook_url' => 'getSlackWebhookUrl',
@@ -299,7 +294,6 @@ class TemplatesdesccachedUploadTemplate implements ModelInterface, ArrayAccess
         $this->container['scss'] = isset($data['scss']) ? $data['scss'] : null;
         $this->container['expire_after'] = isset($data['expire_after']) ? $data['expire_after'] : null;
         $this->container['allow_additional_properties'] = isset($data['allow_additional_properties']) ? $data['allow_additional_properties'] : null;
-        $this->container['document'] = isset($data['document']) ? $data['document'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['public_submissions'] = isset($data['public_submissions']) ? $data['public_submissions'] : null;
         $this->container['slack_webhook_url'] = isset($data['slack_webhook_url']) ? $data['slack_webhook_url'] : null;
@@ -479,30 +473,6 @@ class TemplatesdesccachedUploadTemplate implements ModelInterface, ArrayAccess
     public function setAllowAdditionalProperties($allow_additional_properties)
     {
         $this->container['allow_additional_properties'] = $allow_additional_properties;
-
-        return $this;
-    }
-
-    /**
-     * Gets document
-     *
-     * @return \DocSpring\Model\TemplatesdesccachedUploadTemplateDocument|null
-     */
-    public function getDocument()
-    {
-        return $this->container['document'];
-    }
-
-    /**
-     * Sets document
-     *
-     * @param \DocSpring\Model\TemplatesdesccachedUploadTemplateDocument|null $document document
-     *
-     * @return $this
-     */
-    public function setDocument($document)
-    {
-        $this->container['document'] = $document;
 
         return $this;
     }

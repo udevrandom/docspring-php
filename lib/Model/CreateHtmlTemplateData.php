@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateTemplateData1
+ * CreateHtmlTemplateData
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * CreateTemplateData1 Class Doc Comment
+ * CreateHtmlTemplateData Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class CreateTemplateData1 implements ModelInterface, ArrayAccess
+class CreateHtmlTemplateData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateTemplateData1 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'create_template_data_1';
+    protected static $openAPIModelName = 'create_html_template_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class CreateTemplateData1 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'template' => '\DocSpring\Model\TemplatesdesccachedUploadTemplate'
+        'template' => '\DocSpring\Model\HtmlTemplateData'
     ];
 
     /**
@@ -210,7 +210,7 @@ class CreateTemplateData1 implements ModelInterface, ArrayAccess
     /**
      * Gets template
      *
-     * @return \DocSpring\Model\TemplatesdesccachedUploadTemplate
+     * @return \DocSpring\Model\HtmlTemplateData
      */
     public function getTemplate()
     {
@@ -220,7 +220,7 @@ class CreateTemplateData1 implements ModelInterface, ArrayAccess
     /**
      * Sets template
      *
-     * @param \DocSpring\Model\TemplatesdesccachedUploadTemplate $template template
+     * @param \DocSpring\Model\HtmlTemplateData $template template
      *
      * @return $this
      */

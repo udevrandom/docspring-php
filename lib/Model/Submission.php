@@ -66,6 +66,7 @@ class Submission implements ModelInterface, ArrayAccess
         'processed_at' => 'string',
         'state' => 'string',
         'metadata' => 'object',
+        'truncated_text' => 'object',
         'pdf_hash' => 'string',
         'download_url' => 'string',
         'permanent_download_url' => 'string',
@@ -89,6 +90,7 @@ class Submission implements ModelInterface, ArrayAccess
         'processed_at' => null,
         'state' => null,
         'metadata' => null,
+        'truncated_text' => null,
         'pdf_hash' => null,
         'download_url' => null,
         'permanent_download_url' => null,
@@ -133,6 +135,7 @@ class Submission implements ModelInterface, ArrayAccess
         'processed_at' => 'processed_at',
         'state' => 'state',
         'metadata' => 'metadata',
+        'truncated_text' => 'truncated_text',
         'pdf_hash' => 'pdf_hash',
         'download_url' => 'download_url',
         'permanent_download_url' => 'permanent_download_url',
@@ -156,6 +159,7 @@ class Submission implements ModelInterface, ArrayAccess
         'processed_at' => 'setProcessedAt',
         'state' => 'setState',
         'metadata' => 'setMetadata',
+        'truncated_text' => 'setTruncatedText',
         'pdf_hash' => 'setPdfHash',
         'download_url' => 'setDownloadUrl',
         'permanent_download_url' => 'setPermanentDownloadUrl',
@@ -179,6 +183,7 @@ class Submission implements ModelInterface, ArrayAccess
         'processed_at' => 'getProcessedAt',
         'state' => 'getState',
         'metadata' => 'getMetadata',
+        'truncated_text' => 'getTruncatedText',
         'pdf_hash' => 'getPdfHash',
         'download_url' => 'getDownloadUrl',
         'permanent_download_url' => 'getPermanentDownloadUrl',
@@ -289,6 +294,7 @@ class Submission implements ModelInterface, ArrayAccess
         $this->container['processed_at'] = isset($data['processed_at']) ? $data['processed_at'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
+        $this->container['truncated_text'] = isset($data['truncated_text']) ? $data['truncated_text'] : null;
         $this->container['pdf_hash'] = isset($data['pdf_hash']) ? $data['pdf_hash'] : null;
         $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
         $this->container['permanent_download_url'] = isset($data['permanent_download_url']) ? $data['permanent_download_url'] : null;
@@ -562,6 +568,30 @@ class Submission implements ModelInterface, ArrayAccess
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets truncated_text
+     *
+     * @return object|null
+     */
+    public function getTruncatedText()
+    {
+        return $this->container['truncated_text'];
+    }
+
+    /**
+     * Sets truncated_text
+     *
+     * @param object|null $truncated_text truncated_text
+     *
+     * @return $this
+     */
+    public function setTruncatedText($truncated_text)
+    {
+        $this->container['truncated_text'] = $truncated_text;
 
         return $this;
     }

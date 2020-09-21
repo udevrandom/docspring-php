@@ -182,6 +182,13 @@ class PendingTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "locked"
+     */
+    public function testPropertyLocked()
+    {
+    }
+
+    /**
      * Test attribute "redirect_url"
      */
     public function testPropertyRedirectUrl()

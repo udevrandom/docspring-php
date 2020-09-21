@@ -1,4 +1,4 @@
-# TemplatesdesccachedUploadTemplate
+# UploadTemplateData
 
 ## Properties
 Name | Type | Description | Notes
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **scss** | **string** |  | [optional] 
 **expire_after** | **float** |  | [optional] 
 **allow_additional_properties** | **bool** |  | [optional] 
-**document** | [**\DocSpring\Model\TemplatesdesccachedUploadTemplateDocument**](TemplatesdesccachedUploadTemplateDocument.md) |  | [optional] 
+**document** | [**\DocSpring\Model\UploadTemplateDataDocument**](UploadTemplateDataDocument.md) |  | [optional] 
 **description** | **string** |  | [optional] 
 **public_submissions** | **bool** |  | [optional] 
 **slack_webhook_url** | **string** |  | [optional] 

@@ -84,6 +84,19 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addFieldsToTemplate
+     *
+     * Add new fields to a Template.
+     *
+     */
+    public function testAddFieldsToTemplate()
+    {
+      $template_id = tpl_000000000000000002; // string | 
+      $add_fields_data = new \DocSpring\Model\AddFieldsData(); // \DocSpring\Model\AddFieldsData | 
+      $result = $apiInstance->addFieldsToTemplate($template_id, $add_fields_data);
+    }
+
+    /**
      * Test case for batchGeneratePdfV1
      *
      * Generates multiple PDFs.
@@ -176,8 +189,8 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateHTMLTemplate()
     {
-      $create_template_data1 = new \DocSpring\Model\CreateTemplateData1(); // \DocSpring\Model\CreateTemplateData1 | 
-      $result = $apiInstance->createHTMLTemplate($create_template_data1);
+      $create_html_template_data = new \DocSpring\Model\CreateHtmlTemplateData(); // \DocSpring\Model\CreateHtmlTemplateData | 
+      $result = $apiInstance->createHTMLTemplate($create_html_template_data);
     }
 
     /**
@@ -202,8 +215,8 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreatePDFTemplateFromUpload()
     {
-      $create_template_data = new \DocSpring\Model\CreateTemplateData(); // \DocSpring\Model\CreateTemplateData | 
-      $result = $apiInstance->createPDFTemplateFromUpload($create_template_data);
+      $create_template_from_upload_data = new \DocSpring\Model\CreateTemplateFromUploadData(); // \DocSpring\Model\CreateTemplateFromUploadData | 
+      $result = $apiInstance->createPDFTemplateFromUpload($create_template_from_upload_data);
     }
 
     /**

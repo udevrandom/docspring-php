@@ -72,6 +72,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         'name' => 'string',
         'template_type' => 'string',
         'id' => 'string',
+        'locked' => 'bool',
         'redirect_url' => 'string'
     ];
 
@@ -96,6 +97,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         'name' => null,
         'template_type' => null,
         'id' => null,
+        'locked' => null,
         'redirect_url' => null
     ];
 
@@ -141,6 +143,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         'name' => 'name',
         'template_type' => 'template_type',
         'id' => 'id',
+        'locked' => 'locked',
         'redirect_url' => 'redirect_url'
     ];
 
@@ -165,6 +168,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'template_type' => 'setTemplateType',
         'id' => 'setId',
+        'locked' => 'setLocked',
         'redirect_url' => 'setRedirectUrl'
     ];
 
@@ -189,6 +193,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'template_type' => 'getTemplateType',
         'id' => 'getId',
+        'locked' => 'getLocked',
         'redirect_url' => 'getRedirectUrl'
     ];
 
@@ -284,6 +289,7 @@ class PendingTemplate implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['template_type'] = isset($data['template_type']) ? $data['template_type'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['locked'] = isset($data['locked']) ? $data['locked'] : null;
         $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
     }
 
@@ -684,6 +690,30 @@ class PendingTemplate implements ModelInterface, ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets locked
+     *
+     * @return bool|null
+     */
+    public function getLocked()
+    {
+        return $this->container['locked'];
+    }
+
+    /**
+     * Sets locked
+     *
+     * @param bool|null $locked locked
+     *
+     * @return $this
+     */
+    public function setLocked($locked)
+    {
+        $this->container['locked'] = $locked;
 
         return $this;
     }

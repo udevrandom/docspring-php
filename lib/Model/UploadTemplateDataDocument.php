@@ -1,6 +1,6 @@
 <?php
 /**
- * TemplatesdesccachedUploadTemplateDocument
+ * UploadTemplateDataDocument
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * TemplatesdesccachedUploadTemplateDocument Class Doc Comment
+ * UploadTemplateDataDocument Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class TemplatesdesccachedUploadTemplateDocument implements ModelInterface, ArrayAccess
+class UploadTemplateDataDocument implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TemplatesdesccachedUploadTemplateDocument implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $openAPIModelName = 'templatesdesccached_upload_template_document';
+    protected static $openAPIModelName = 'upload_template_data_document';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class TemplatesdesccachedUploadTemplateDocument implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'metadata' => '\DocSpring\Model\TemplatesdesccachedUploadTemplateDocumentMetadata',
+        'metadata' => '\DocSpring\Model\UploadTemplateDataDocumentMetadata',
         'id' => 'string',
         'storage' => 'string'
     ];
@@ -240,7 +240,7 @@ class TemplatesdesccachedUploadTemplateDocument implements ModelInterface, Array
     /**
      * Gets metadata
      *
-     * @return \DocSpring\Model\TemplatesdesccachedUploadTemplateDocumentMetadata|null
+     * @return \DocSpring\Model\UploadTemplateDataDocumentMetadata|null
      */
     public function getMetadata()
     {
@@ -250,7 +250,7 @@ class TemplatesdesccachedUploadTemplateDocument implements ModelInterface, Array
     /**
      * Sets metadata
      *
-     * @param \DocSpring\Model\TemplatesdesccachedUploadTemplateDocumentMetadata|null $metadata metadata
+     * @param \DocSpring\Model\UploadTemplateDataDocumentMetadata|null $metadata metadata
      *
      * @return $this
      */

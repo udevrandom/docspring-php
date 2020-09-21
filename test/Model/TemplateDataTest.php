@@ -1,6 +1,6 @@
 <?php
 /**
- * TemplatestemplateIdTemplateTest
+ * TemplateDataTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * TemplatestemplateIdTemplateTest Class Doc Comment
+ * TemplateDataTest Class Doc Comment
  *
  * @category    Class
- * @description TemplatestemplateIdTemplate
+ * @description TemplateData
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TemplatestemplateIdTemplateTest extends \PHPUnit_Framework_TestCase
+class TemplateDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class TemplatestemplateIdTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "TemplatestemplateIdTemplate"
+     * Test "TemplateData"
      */
-    public function testTemplatestemplateIdTemplate()
+    public function testTemplateData()
     {
     }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateTemplateData
+ * AddFieldsTemplateResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * UpdateTemplateData Class Doc Comment
+ * AddFieldsTemplateResponse Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class UpdateTemplateData implements ModelInterface, ArrayAccess
+class AddFieldsTemplateResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'update_template_data';
+    protected static $openAPIModelName = 'add_fields_template_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,9 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'template' => '\DocSpring\Model\TemplateData'
+        'new_field_ids' => 'int[]',
+        'errors' => 'string[]',
+        'status' => 'string'
     ];
 
     /**
@@ -66,7 +68,9 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'template' => null
+        'new_field_ids' => null,
+        'errors' => null,
+        'status' => null
     ];
 
     /**
@@ -96,7 +100,9 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'template' => 'template'
+        'new_field_ids' => 'new_field_ids',
+        'errors' => 'errors',
+        'status' => 'status'
     ];
 
     /**
@@ -105,7 +111,9 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'template' => 'setTemplate'
+        'new_field_ids' => 'setNewFieldIds',
+        'errors' => 'setErrors',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -114,7 +122,9 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'template' => 'getTemplate'
+        'new_field_ids' => 'getNewFieldIds',
+        'errors' => 'getErrors',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -158,8 +168,23 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const STATUS_SUCCESS = 'success';
+    const STATUS_ERROR = 'error';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_SUCCESS,
+            self::STATUS_ERROR,
+        ];
+    }
     
 
     /**
@@ -177,7 +202,9 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['template'] = isset($data['template']) ? $data['template'] : null;
+        $this->container['new_field_ids'] = isset($data['new_field_ids']) ? $data['new_field_ids'] : null;
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
     }
 
     /**
@@ -189,9 +216,14 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['template'] === null) {
-            $invalidProperties[] = "'template' can't be null";
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
         }
+
         return $invalidProperties;
     }
 
@@ -208,25 +240,82 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets template
+     * Gets new_field_ids
      *
-     * @return \DocSpring\Model\TemplateData
+     * @return int[]|null
      */
-    public function getTemplate()
+    public function getNewFieldIds()
     {
-        return $this->container['template'];
+        return $this->container['new_field_ids'];
     }
 
     /**
-     * Sets template
+     * Sets new_field_ids
      *
-     * @param \DocSpring\Model\TemplateData $template template
+     * @param int[]|null $new_field_ids new_field_ids
      *
      * @return $this
      */
-    public function setTemplate($template)
+    public function setNewFieldIds($new_field_ids)
     {
-        $this->container['template'] = $template;
+        $this->container['new_field_ids'] = $new_field_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets errors
+     *
+     * @return string[]|null
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param string[]|null $errors errors
+     *
+     * @return $this
+     */
+    public function setErrors($errors)
+    {
+        $this->container['errors'] = $errors;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
 
         return $this;
     }

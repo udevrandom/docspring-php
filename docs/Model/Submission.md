@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **processed_at** | **string** |  | [optional] 
 **state** | **string** |  | 
 **metadata** | **object** |  | [optional] 
+**truncated_text** | **object** |  | [optional] 
 **pdf_hash** | **string** |  | [optional] 
 **download_url** | **string** |  | [optional] 
 **permanent_download_url** | **string** |  | [optional] 

@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateTemplateData
+ * AddFieldsData
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * UpdateTemplateData Class Doc Comment
+ * AddFieldsData Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class UpdateTemplateData implements ModelInterface, ArrayAccess
+class AddFieldsData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'update_template_data';
+    protected static $openAPIModelName = 'add_fields_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'template' => '\DocSpring\Model\TemplateData'
+        'fields' => '\DocSpring\Model\TemplatestemplateIdaddFieldsFields[]'
     ];
 
     /**
@@ -66,7 +66,7 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'template' => null
+        'fields' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'template' => 'template'
+        'fields' => 'fields'
     ];
 
     /**
@@ -105,7 +105,7 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'template' => 'setTemplate'
+        'fields' => 'setFields'
     ];
 
     /**
@@ -114,7 +114,7 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'template' => 'getTemplate'
+        'fields' => 'getFields'
     ];
 
     /**
@@ -177,7 +177,7 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['template'] = isset($data['template']) ? $data['template'] : null;
+        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
     }
 
     /**
@@ -189,8 +189,8 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['template'] === null) {
-            $invalidProperties[] = "'template' can't be null";
+        if ($this->container['fields'] === null) {
+            $invalidProperties[] = "'fields' can't be null";
         }
         return $invalidProperties;
     }
@@ -208,25 +208,25 @@ class UpdateTemplateData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets template
+     * Gets fields
      *
-     * @return \DocSpring\Model\TemplateData
+     * @return \DocSpring\Model\TemplatestemplateIdaddFieldsFields[]
      */
-    public function getTemplate()
+    public function getFields()
     {
-        return $this->container['template'];
+        return $this->container['fields'];
     }
 
     /**
-     * Sets template
+     * Sets fields
      *
-     * @param \DocSpring\Model\TemplateData $template template
+     * @param \DocSpring\Model\TemplatestemplateIdaddFieldsFields[] $fields fields
      *
      * @return $this
      */
-    public function setTemplate($template)
+    public function setFields($fields)
     {
-        $this->container['template'] = $template;
+        $this->container['fields'] = $fields;
 
         return $this;
     }

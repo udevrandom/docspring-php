@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateTemplateDataTest
+ * AddFieldsDataTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * CreateTemplateDataTest Class Doc Comment
+ * AddFieldsDataTest Class Doc Comment
  *
  * @category    Class
- * @description CreateTemplateData
+ * @description AddFieldsData
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CreateTemplateDataTest extends \PHPUnit_Framework_TestCase
+class AddFieldsDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,16 @@ class CreateTemplateDataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CreateTemplateData"
+     * Test "AddFieldsData"
      */
-    public function testCreateTemplateData()
+    public function testAddFieldsData()
     {
     }
 
     /**
-     * Test attribute "template"
+     * Test attribute "fields"
      */
-    public function testPropertyTemplate()
+    public function testPropertyFields()
     {
     }
 }

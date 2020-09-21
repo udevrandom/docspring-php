@@ -4,6 +4,7 @@ All URIs are relative to *https://api.docspring.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addFieldsToTemplate**](PDFApi.md#addFieldsToTemplate) | **PUT** /templates/{template_id}/add_fields | Add new fields to a Template
 [**batchGeneratePdfV1**](PDFApi.md#batchGeneratePdfV1) | **POST** /templates/{template_id}/submissions/batch | Generates multiple PDFs
 [**batchGeneratePdfs**](PDFApi.md#batchGeneratePdfs) | **POST** /submissions/batches | Generates multiple PDFs
 [**combinePdfs**](PDFApi.md#combinePdfs) | **POST** /combined_submissions?v&#x3D;2 | Merge submission PDFs, template PDFs, or custom files
@@ -34,6 +35,62 @@ Method | HTTP request | Description
 [**updateDataRequest**](PDFApi.md#updateDataRequest) | **PUT** /data_requests/{data_request_id} | Update a submission data request
 [**updateTemplate**](PDFApi.md#updateTemplate) | **PUT** /templates/{template_id} | Update a Template
 
+
+# **addFieldsToTemplate**
+> \DocSpring\Model\AddFieldsTemplateResponse addFieldsToTemplate($template_id, $add_fields_data)
+
+Add new fields to a Template
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: api_token_basic
+$config = DocSpring\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new DocSpring\Api\PDFApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$template_id = tpl_000000000000000002; // string | 
+$add_fields_data = new \DocSpring\Model\AddFieldsData(); // \DocSpring\Model\AddFieldsData | 
+
+try {
+    $result = $apiInstance->addFieldsToTemplate($template_id, $add_fields_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PDFApi->addFieldsToTemplate: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **template_id** | **string**|  |
+ **add_fields_data** | [**\DocSpring\Model\AddFieldsData**](../Model/AddFieldsData.md)|  |
+
+### Return type
+
+[**\DocSpring\Model\AddFieldsTemplateResponse**](../Model/AddFieldsTemplateResponse.md)
+
+### Authorization
+
+[api_token_basic](../../README.md#api_token_basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **batchGeneratePdfV1**
 > \DocSpring\Model\CreateSubmissionResponse[] batchGeneratePdfV1($template_id, $request_body)
@@ -416,7 +473,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createHTMLTemplate**
-> \DocSpring\Model\PendingTemplate createHTMLTemplate($create_template_data1)
+> \DocSpring\Model\PendingTemplate createHTMLTemplate($create_html_template_data)
 
 Create a new HTML template
 
@@ -437,10 +494,10 @@ $apiInstance = new DocSpring\Api\PDFApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_template_data1 = new \DocSpring\Model\CreateTemplateData1(); // \DocSpring\Model\CreateTemplateData1 | 
+$create_html_template_data = new \DocSpring\Model\CreateHtmlTemplateData(); // \DocSpring\Model\CreateHtmlTemplateData | 
 
 try {
-    $result = $apiInstance->createHTMLTemplate($create_template_data1);
+    $result = $apiInstance->createHTMLTemplate($create_html_template_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PDFApi->createHTMLTemplate: ', $e->getMessage(), PHP_EOL;
@@ -452,7 +509,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_template_data1** | [**\DocSpring\Model\CreateTemplateData1**](../Model/CreateTemplateData1.md)|  |
+ **create_html_template_data** | [**\DocSpring\Model\CreateHtmlTemplateData**](../Model/CreateHtmlTemplateData.md)|  |
 
 ### Return type
 
@@ -528,7 +585,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPDFTemplateFromUpload**
-> \DocSpring\Model\PendingTemplate createPDFTemplateFromUpload($create_template_data)
+> \DocSpring\Model\PendingTemplate createPDFTemplateFromUpload($create_template_from_upload_data)
 
 Create a new PDF template from a cached presign upload
 
@@ -549,10 +606,10 @@ $apiInstance = new DocSpring\Api\PDFApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_template_data = new \DocSpring\Model\CreateTemplateData(); // \DocSpring\Model\CreateTemplateData | 
+$create_template_from_upload_data = new \DocSpring\Model\CreateTemplateFromUploadData(); // \DocSpring\Model\CreateTemplateFromUploadData | 
 
 try {
-    $result = $apiInstance->createPDFTemplateFromUpload($create_template_data);
+    $result = $apiInstance->createPDFTemplateFromUpload($create_template_from_upload_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PDFApi->createPDFTemplateFromUpload: ', $e->getMessage(), PHP_EOL;
@@ -564,7 +621,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_template_data** | [**\DocSpring\Model\CreateTemplateData**](../Model/CreateTemplateData.md)|  |
+ **create_template_from_upload_data** | [**\DocSpring\Model\CreateTemplateFromUploadData**](../Model/CreateTemplateFromUploadData.md)|  |
 
 ### Return type
 

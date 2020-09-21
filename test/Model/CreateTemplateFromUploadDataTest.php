@@ -1,6 +1,6 @@
 <?php
 /**
- * TemplatesdesccachedUploadTemplateDocumentMetadataTest
+ * CreateTemplateFromUploadDataTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace DocSpring;
 
 /**
- * TemplatesdesccachedUploadTemplateDocumentMetadataTest Class Doc Comment
+ * CreateTemplateFromUploadDataTest Class Doc Comment
  *
  * @category    Class
- * @description TemplatesdesccachedUploadTemplateDocumentMetadata
+ * @description CreateTemplateFromUploadData
  * @package     DocSpring
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TemplatesdesccachedUploadTemplateDocumentMetadataTest extends \PHPUnit_Framework_TestCase
+class CreateTemplateFromUploadDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,30 +70,16 @@ class TemplatesdesccachedUploadTemplateDocumentMetadataTest extends \PHPUnit_Fra
     }
 
     /**
-     * Test "TemplatesdesccachedUploadTemplateDocumentMetadata"
+     * Test "CreateTemplateFromUploadData"
      */
-    public function testTemplatesdesccachedUploadTemplateDocumentMetadata()
+    public function testCreateTemplateFromUploadData()
     {
     }
 
     /**
-     * Test attribute "filename"
+     * Test attribute "template"
      */
-    public function testPropertyFilename()
-    {
-    }
-
-    /**
-     * Test attribute "size"
-     */
-    public function testPropertySize()
-    {
-    }
-
-    /**
-     * Test attribute "mime_type"
-     */
-    public function testPropertyMimeType()
+    public function testPropertyTemplate()
     {
     }
 }
