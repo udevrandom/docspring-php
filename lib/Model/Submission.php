@@ -65,6 +65,7 @@ class Submission implements ModelInterface, ArrayAccess
         'expires_at' => 'string',
         'processed_at' => 'string',
         'state' => 'string',
+        'data' => 'object',
         'metadata' => 'object',
         'truncated_text' => 'object',
         'pdf_hash' => 'string',
@@ -72,7 +73,9 @@ class Submission implements ModelInterface, ArrayAccess
         'permanent_download_url' => 'string',
         'batch_id' => 'string',
         'data_requests' => '\DocSpring\Model\SubmissionDataRequest[]',
-        'actions' => '\DocSpring\Model\SubmissionAction[]'
+        'actions' => '\DocSpring\Model\SubmissionAction[]',
+        'source' => 'string',
+        'referrer' => 'string'
     ];
 
     /**
@@ -89,6 +92,7 @@ class Submission implements ModelInterface, ArrayAccess
         'expires_at' => null,
         'processed_at' => null,
         'state' => null,
+        'data' => null,
         'metadata' => null,
         'truncated_text' => null,
         'pdf_hash' => null,
@@ -96,7 +100,9 @@ class Submission implements ModelInterface, ArrayAccess
         'permanent_download_url' => null,
         'batch_id' => null,
         'data_requests' => null,
-        'actions' => null
+        'actions' => null,
+        'source' => null,
+        'referrer' => null
     ];
 
     /**
@@ -134,6 +140,7 @@ class Submission implements ModelInterface, ArrayAccess
         'expires_at' => 'expires_at',
         'processed_at' => 'processed_at',
         'state' => 'state',
+        'data' => 'data',
         'metadata' => 'metadata',
         'truncated_text' => 'truncated_text',
         'pdf_hash' => 'pdf_hash',
@@ -141,7 +148,9 @@ class Submission implements ModelInterface, ArrayAccess
         'permanent_download_url' => 'permanent_download_url',
         'batch_id' => 'batch_id',
         'data_requests' => 'data_requests',
-        'actions' => 'actions'
+        'actions' => 'actions',
+        'source' => 'source',
+        'referrer' => 'referrer'
     ];
 
     /**
@@ -158,6 +167,7 @@ class Submission implements ModelInterface, ArrayAccess
         'expires_at' => 'setExpiresAt',
         'processed_at' => 'setProcessedAt',
         'state' => 'setState',
+        'data' => 'setData',
         'metadata' => 'setMetadata',
         'truncated_text' => 'setTruncatedText',
         'pdf_hash' => 'setPdfHash',
@@ -165,7 +175,9 @@ class Submission implements ModelInterface, ArrayAccess
         'permanent_download_url' => 'setPermanentDownloadUrl',
         'batch_id' => 'setBatchId',
         'data_requests' => 'setDataRequests',
-        'actions' => 'setActions'
+        'actions' => 'setActions',
+        'source' => 'setSource',
+        'referrer' => 'setReferrer'
     ];
 
     /**
@@ -182,6 +194,7 @@ class Submission implements ModelInterface, ArrayAccess
         'expires_at' => 'getExpiresAt',
         'processed_at' => 'getProcessedAt',
         'state' => 'getState',
+        'data' => 'getData',
         'metadata' => 'getMetadata',
         'truncated_text' => 'getTruncatedText',
         'pdf_hash' => 'getPdfHash',
@@ -189,7 +202,9 @@ class Submission implements ModelInterface, ArrayAccess
         'permanent_download_url' => 'getPermanentDownloadUrl',
         'batch_id' => 'getBatchId',
         'data_requests' => 'getDataRequests',
-        'actions' => 'getActions'
+        'actions' => 'getActions',
+        'source' => 'getSource',
+        'referrer' => 'getReferrer'
     ];
 
     /**
@@ -293,6 +308,7 @@ class Submission implements ModelInterface, ArrayAccess
         $this->container['expires_at'] = isset($data['expires_at']) ? $data['expires_at'] : null;
         $this->container['processed_at'] = isset($data['processed_at']) ? $data['processed_at'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['truncated_text'] = isset($data['truncated_text']) ? $data['truncated_text'] : null;
         $this->container['pdf_hash'] = isset($data['pdf_hash']) ? $data['pdf_hash'] : null;
@@ -301,6 +317,8 @@ class Submission implements ModelInterface, ArrayAccess
         $this->container['batch_id'] = isset($data['batch_id']) ? $data['batch_id'] : null;
         $this->container['data_requests'] = isset($data['data_requests']) ? $data['data_requests'] : null;
         $this->container['actions'] = isset($data['actions']) ? $data['actions'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['referrer'] = isset($data['referrer']) ? $data['referrer'] : null;
     }
 
     /**
@@ -549,6 +567,30 @@ class Submission implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets data
+     *
+     * @return object|null
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param object|null $data data
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
      * Gets metadata
      *
      * @return object|null
@@ -736,6 +778,54 @@ class Submission implements ModelInterface, ArrayAccess
     public function setActions($actions)
     {
         $this->container['actions'] = $actions;
+
+        return $this;
+    }
+
+    /**
+     * Gets source
+     *
+     * @return string|null
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     *
+     * @param string|null $source source
+     *
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
+     * Gets referrer
+     *
+     * @return string|null
+     */
+    public function getReferrer()
+    {
+        return $this->container['referrer'];
+    }
+
+    /**
+     * Sets referrer
+     *
+     * @param string|null $referrer referrer
+     *
+     * @return $this
+     */
+    public function setReferrer($referrer)
+    {
+        $this->container['referrer'] = $referrer;
 
         return $this;
     }

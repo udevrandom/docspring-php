@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **expires_at** | **string** |  | [optional] 
 **processed_at** | **string** |  | [optional] 
 **state** | **string** |  | 
+**data** | **object** |  | [optional] 
 **metadata** | **object** |  | [optional] 
 **truncated_text** | **object** |  | [optional] 
 **pdf_hash** | **string** |  | [optional] 
@@ -19,6 +20,8 @@ Name | Type | Description | Notes
 **batch_id** | **string** |  | [optional] 
 **data_requests** | [**\DocSpring\Model\SubmissionDataRequest[]**](SubmissionDataRequest.md) |  | [optional] 
 **actions** | [**\DocSpring\Model\SubmissionAction[]**](SubmissionAction.md) |  | [optional] 
+**source** | **string** |  | [optional] 
+**referrer** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1037,7 +1037,7 @@ $apiInstance = new DocSpring\Api\PDFApi(
     $config
 );
 $submission_id = sub_000000000000000001; // string | 
-$include_data = false; // bool | 
+$include_data = true; // bool | 
 
 try {
     $result = $apiInstance->getSubmission($submission_id, $include_data);

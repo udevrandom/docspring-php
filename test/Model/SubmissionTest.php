@@ -133,6 +133,13 @@ class SubmissionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "data"
+     */
+    public function testPropertyData()
+    {
+    }
+
+    /**
      * Test attribute "metadata"
      */
     public function testPropertyMetadata()
@@ -185,6 +192,20 @@ class SubmissionTest extends \PHPUnit_Framework_TestCase
      * Test attribute "actions"
      */
     public function testPropertyActions()
+    {
+    }
+
+    /**
+     * Test attribute "source"
+     */
+    public function testPropertySource()
+    {
+    }
+
+    /**
+     * Test attribute "referrer"
+     */
+    public function testPropertyReferrer()
     {
     }
 }
