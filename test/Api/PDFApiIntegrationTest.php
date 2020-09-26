@@ -122,7 +122,7 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
     {
       $template_id = 'tpl_000000000000000001'; // string |
 
-      $batchGenerateData = json_encode([
+      $batchGenerateData = [
         "template_id" => $template_id,
         "submissions" => array(
           [
@@ -138,7 +138,7 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
             ]
           ]
         )
-      ]);
+      ];
       $response = $this->docspring->batchGeneratePdfs($batchGenerateData);
       $this->assertEquals('success', $response->getStatus());
 
