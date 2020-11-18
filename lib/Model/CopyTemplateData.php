@@ -1,6 +1,6 @@
 <?php
 /**
- * MoveTemplateData
+ * CopyTemplateData
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \DocSpring\ObjectSerializer;
 
 /**
- * MoveTemplateData Class Doc Comment
+ * CopyTemplateData Class Doc Comment
  *
  * @category Class
  * @package  DocSpring
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class MoveTemplateData implements ModelInterface, ArrayAccess
+class CopyTemplateData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MoveTemplateData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'move_template_data';
+    protected static $openAPIModelName = 'copy_template_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,6 +57,7 @@ class MoveTemplateData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'name' => 'string',
         'parent_folder_id' => 'string'
     ];
 
@@ -66,6 +67,7 @@ class MoveTemplateData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'name' => null,
         'parent_folder_id' => null
     ];
 
@@ -96,6 +98,7 @@ class MoveTemplateData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'name' => 'name',
         'parent_folder_id' => 'parent_folder_id'
     ];
 
@@ -105,6 +108,7 @@ class MoveTemplateData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'name' => 'setName',
         'parent_folder_id' => 'setParentFolderId'
     ];
 
@@ -114,6 +118,7 @@ class MoveTemplateData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'name' => 'getName',
         'parent_folder_id' => 'getParentFolderId'
     ];
 
@@ -177,6 +182,7 @@ class MoveTemplateData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['parent_folder_id'] = isset($data['parent_folder_id']) ? $data['parent_folder_id'] : null;
     }
 
@@ -206,6 +212,30 @@ class MoveTemplateData implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
 
     /**
      * Gets parent_folder_id

@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**batchGeneratePdfs**](PDFApi.md#batchGeneratePdfs) | **POST** /submissions/batches | Generates multiple PDFs
 [**combinePdfs**](PDFApi.md#combinePdfs) | **POST** /combined_submissions?v&#x3D;2 | Merge submission PDFs, template PDFs, or custom files
 [**combineSubmissions**](PDFApi.md#combineSubmissions) | **POST** /combined_submissions | Merge generated PDFs together
+[**copyTemplate**](PDFApi.md#copyTemplate) | **POST** /templates/{template_id}/copy | Copy a Template
 [**createCustomFileFromUpload**](PDFApi.md#createCustomFileFromUpload) | **POST** /custom_files | Create a new custom file from a cached presign upload
 [**createDataRequestToken**](PDFApi.md#createDataRequestToken) | **POST** /data_requests/{data_request_id}/tokens | Creates a new data request token for form authentication
 [**createFolder**](PDFApi.md#createFolder) | **POST** /folders/ | Create a folder
@@ -298,6 +299,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\DocSpring\Model\CreateCombinedSubmissionResponse**](../Model/CreateCombinedSubmissionResponse.md)
+
+### Authorization
+
+[api_token_basic](../../README.md#api_token_basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **copyTemplate**
+> \DocSpring\Model\Template copyTemplate($template_id, $copy_template_data)
+
+Copy a Template
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: api_token_basic
+$config = DocSpring\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new DocSpring\Api\PDFApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$template_id = tpl_000000000000000001; // string | 
+$copy_template_data = new \DocSpring\Model\CopyTemplateData(); // \DocSpring\Model\CopyTemplateData | 
+
+try {
+    $result = $apiInstance->copyTemplate($template_id, $copy_template_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PDFApi->copyTemplate: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **template_id** | **string**|  |
+ **copy_template_data** | [**\DocSpring\Model\CopyTemplateData**](../Model/CopyTemplateData.md)|  |
+
+### Return type
+
+[**\DocSpring\Model\Template**](../Model/Template.md)
 
 ### Authorization
 

@@ -105,6 +105,13 @@ class SubmissionDataRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "sort_order"
+     */
+    public function testPropertySortOrder()
+    {
+    }
+
+    /**
      * Test attribute "fields"
      */
     public function testPropertyFields()

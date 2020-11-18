@@ -61,6 +61,7 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         'name' => 'string',
         'email' => 'string',
         'order' => 'int',
+        'sort_order' => 'int',
         'fields' => 'string[]',
         'metadata' => 'object',
         'state' => 'string',
@@ -88,6 +89,7 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         'name' => null,
         'email' => null,
         'order' => null,
+        'sort_order' => null,
         'fields' => null,
         'metadata' => null,
         'state' => null,
@@ -136,6 +138,7 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         'name' => 'name',
         'email' => 'email',
         'order' => 'order',
+        'sort_order' => 'sort_order',
         'fields' => 'fields',
         'metadata' => 'metadata',
         'state' => 'state',
@@ -163,6 +166,7 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'email' => 'setEmail',
         'order' => 'setOrder',
+        'sort_order' => 'setSortOrder',
         'fields' => 'setFields',
         'metadata' => 'setMetadata',
         'state' => 'setState',
@@ -190,6 +194,7 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'email' => 'getEmail',
         'order' => 'getOrder',
+        'sort_order' => 'getSortOrder',
         'fields' => 'getFields',
         'metadata' => 'getMetadata',
         'state' => 'getState',
@@ -334,6 +339,7 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['sort_order'] = isset($data['sort_order']) ? $data['sort_order'] : null;
         $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
@@ -371,6 +377,9 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
         }
         if ($this->container['order'] === null) {
             $invalidProperties[] = "'order' can't be null";
+        }
+        if ($this->container['sort_order'] === null) {
+            $invalidProperties[] = "'sort_order' can't be null";
         }
         if ($this->container['fields'] === null) {
             $invalidProperties[] = "'fields' can't be null";
@@ -512,6 +521,30 @@ class SubmissionDataRequest implements ModelInterface, ArrayAccess
     public function setOrder($order)
     {
         $this->container['order'] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_order
+     *
+     * @return int
+     */
+    public function getSortOrder()
+    {
+        return $this->container['sort_order'];
+    }
+
+    /**
+     * Sets sort_order
+     *
+     * @param int $sort_order sort_order
+     *
+     * @return $this
+     */
+    public function setSortOrder($sort_order)
+    {
+        $this->container['sort_order'] = $sort_order;
 
         return $this;
     }

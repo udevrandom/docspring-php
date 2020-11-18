@@ -146,6 +146,19 @@ class PDFApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for copyTemplate
+     *
+     * Copy a Template.
+     *
+     */
+    public function testCopyTemplate()
+    {
+      $template_id = tpl_000000000000000001; // string | 
+      $copy_template_data = new \DocSpring\Model\CopyTemplateData(); // \DocSpring\Model\CopyTemplateData | 
+      $result = $apiInstance->copyTemplate($template_id, $copy_template_data);
+    }
+
+    /**
      * Test case for createCustomFileFromUpload
      *
      * Create a new custom file from a cached presign upload.
